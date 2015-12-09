@@ -30,13 +30,13 @@
    "  %["
    (:propertize mode-name
                 face mode-line-mode-face)
-   "%] "
+   "%] ["
    (:eval (propertize (format-mode-line minor-mode-alist)
                       'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
-   "    "
+   "]    "
                                         ; nyan-mode uses nyan cat as an alternative to %p
    (:eval (when nyan-mode (list (nyan-create))))
    ))
@@ -107,8 +107,8 @@
 
 (set-face-attribute 'mode-line-minor-mode-face nil
                     :inherit 'mode-line-mode-face
-                    :foreground "gray40"
-                    :height 80)
+                    :foreground "gray45"
+                    :height 100)
 
 (set-face-attribute 'mode-line-process-face nil
                     :inherit 'mode-line-face

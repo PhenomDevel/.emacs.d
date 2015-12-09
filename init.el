@@ -16,6 +16,7 @@
 (require 'setup--zenburn)
 (require 'setup--rainbow-delimiters)
 (require 'setup--minor-mode-line)
+(require 'setup--org)
 (require 'setup--editing)
 (require 'setup--shell-integration)
 (require 'setup--smex)
@@ -45,6 +46,7 @@
 
 
 
+(add-hook 'cider-mode-hook 'electric-indent-mode)
 
 
 
@@ -60,7 +62,6 @@
 
 
 
-	 
 (add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode))
 
 

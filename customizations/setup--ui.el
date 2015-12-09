@@ -15,7 +15,8 @@
   (scroll-bar-mode -1))
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 60)
+(set-face-attribute "Sans Serif" nil :height 60)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
@@ -24,23 +25,23 @@
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
-      x-select-enable-clipboard t
+ x-select-enable-clipboard t
 
-      ;; I'm actually not sure what this does but it's recommended?
-      x-select-enable-primary t
+ ;; I'm actually not sure what this does but it's recommended?
+ x-select-enable-primary t
 
-      ;; Save clipboard strings into kill ring before replacing them.
-      ;; When one selects something in another program to paste it into Emacs,
-      ;; but kills something in Emacs before actually pasting it,
-      ;; this selection is gone unless this variable is non-nil
-      save-interprogram-paste-before-kill t
+ ;; Save clipboard strings into kill ring before replacing them.
+ ;; When one selects something in another program to paste it into Emacs,
+ ;; but kills something in Emacs before actually pasting it,
+ ;; this selection is gone unless this variable is non-nil
+ save-interprogram-paste-before-kill t
 
-      ;; Shows all options when running apropos. For more info,
-      ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
-      apropos-do-all t
+ ;; Shows all options when running apropos. For more info,
+ ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
+ apropos-do-all t
 
-      ;; Mouse yank commands yank at point instead of at click.
-      mouse-yank-at-point t)
+ ;; Mouse yank commands yank at point instead of at click.
+ mouse-yank-at-point t)
 
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
@@ -55,14 +56,12 @@
 (setq ring-bell-function 'ignore)
 
 ;; UTF-8
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-(load-library "iso-transl")
-
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
 
 ;; Show parenthesis mode
 (show-paren-mode 1)
+
 (global-hl-line-mode 1)
 
 (setq projectile-completion-mode 'ido)

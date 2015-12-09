@@ -61,6 +61,12 @@
 
     company-restclient
 
+    org
+
+    org-bullets
+
+    org-beautify-theme
+
     ido
 
     ido-completing-read+

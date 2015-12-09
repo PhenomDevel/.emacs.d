@@ -71,7 +71,7 @@
       (ns-get-selection-internal 'CLIPBOARD)
     (quit nil)))
 
-(setq electric-indent-mode nil)
+(setq electric-indent-mode t)
 
 
 (provide 'setup--editing)
