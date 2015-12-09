@@ -10,3 +10,13 @@ auto-save-list
 backups
 elpa/*
 bak/*
+/.litable-lists.el
+/.recentf~
+/ac-comphist.dat
+/elscreen
+eshell/*
+/init.bak.el
+/init.el~
+server/*
+themes/*
+url/*

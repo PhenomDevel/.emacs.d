@@ -1,64 +1,98 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Site lisp
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Basic Stuff
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp")
+(add-to-list 'load-path "~/.emacs.d/customizations")
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Packages
-
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Require Stuff
 (require 'setup--package)
-(require 'util--package)
-
-(util--package/install-packages! '(dash
-                                   elscreen
-                                   smex
-                                   company
-                                   ))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Basics
-
 (require 'util)
-(require 'setup--osx)
-(require 'setup--sane-defaults)
-(require 'setup--appearance)
-(require 'setup--scrolling)
 
-(util/global-set-keys
-  "C-w"     'backward-kill-word
-  "C-h"     'backward-delete-char-untabify
-  "C-v"     'set-mark-command
-  "M-\\"    'help
-  "M-0"     'back-to-indentation
-  "C-x C-s" 'util/save-all-buffers!
-  "M-j"     'util/join-line
-  "M-o"     'util/window-toggle
-  "M-;"     'util/comment
-  "M-l"     'util/switch-to-previous-buffer)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Quickly open files
-
-(util/global-set-keys
-  "M-RET e" (util/open-file "~/.emacs.d/init.el"))
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Elscreen
-
+;; UI Stuff
 (require 'setup--elscreen)
-(require 'util--elscreen)
-
-(util/global-set-keys
-  "M-P" 'elscreen-previous
-  "M-N" 'elscreen-next
-  "M-X" 'elscreen-kill
-  "M-C" 'util--elscreen/create)
-
+(require 'setup--navigation)
+(require 'setup--ui)
+(require 'setup--editing)
+(require 'setup--shell-integration)
+(require 'setup--zenburn)
 (require 'setup--smex)
+(require 'setup--highlight-symbol)
 
-(util/global-set-keys
-  "M-x" 'setup--smex/run-smex)
+;; Other Stuff
+(require 'setup--misc)
+(require 'setup--elisp-editing)
+(require 'setup--clojure)
+(require 'setup--js)
+(require 'setup--ido)
+(require 'setup--company)
+(require 'cider)
+
+
+;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Load Custom Code
+
+(load "component-snippets.el")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+(add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode))
+
+
+
+
+;; Poping-up contextual documentation
+(eval-after-load "cider"
+  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+
+
+										   
+										  
+
+(global-aggressive-indent-mode 1)
+
+;; magit windows specific config - ssh-agency package required
+(setenv "GIT_ASKPASS" "git-gui--askpass")
+(setenv "SSH_ASKPASS" "git-gui--askpass")
+
+
+
+
+
+
+
+
+
