@@ -67,6 +67,8 @@
 
     org-beautify-theme
 
+    highlight-symbol
+
     ido
 
     ido-completing-read+

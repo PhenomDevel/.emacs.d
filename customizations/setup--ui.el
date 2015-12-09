@@ -15,8 +15,8 @@
   (scroll-bar-mode -1))
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 60)
-(set-face-attribute "Sans Serif" nil :height 60)
+(set-face-attribute 'default nil :height 100
+		    :font "Sans Serif")
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
@@ -85,7 +85,6 @@
           (lambda ()
             (font-lock-add-keywords nil '(("\\<\\(HACK\\|NOTE\\|FIXME\\|TODO\\|BUG\\|comment\\|INFO\\)"
                                            1 font-lock-warning-face t)))))
-
 
 
 
