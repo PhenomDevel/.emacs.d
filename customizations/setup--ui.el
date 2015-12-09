@@ -72,6 +72,8 @@
 (set-face-foreground 'highlight nil)
 
 
+
+
 ;; Scroll with n Lines lookahead
 (let ((n 5))
   (setq scroll-step 1)
@@ -84,5 +86,10 @@
           (lambda ()
             (font-lock-add-keywords nil '(("\\<\\(HACK\\|NOTE\\|FIXME\\|TODO\\|BUG\\|comment\\|INFO\\)"
                                            1 font-lock-warning-face t)))))
+
+
+
+
+
 
 (provide 'setup--ui)

@@ -13,9 +13,11 @@
 (require 'setup--elscreen)
 (require 'setup--navigation)
 (require 'setup--ui)
+(require 'setup--zenburn)
+(require 'setup--rainbow-delimiters)
+(require 'setup--minor-mode-line)
 (require 'setup--editing)
 (require 'setup--shell-integration)
-(require 'setup--zenburn)
 (require 'setup--smex)
 (require 'setup--highlight-symbol)
 

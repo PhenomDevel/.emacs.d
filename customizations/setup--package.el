@@ -17,7 +17,33 @@
 
     cider
 
+    cider-eval-sexp-fu
+
+    dash
+
+    lua-mode
+
+    magit
+
+    magit-popup
+
+    multiple-cursors
+
+    neotree
+
+    paredit
+
+    paxedit
+
+    projectile
+
+    rainbow-mode
+
     ido-ubiquitous
+
+    restclient
+
+    yasnippet
 
     smex
 
@@ -27,9 +53,29 @@
     
     rainbow-delimiters
 
+    aggressive-indent
+
+    company
+
+    company-quickhelp
+
+    company-restclient
+
+    ido
+
+    ido-completing-read+
+
+    ido-vertical-mode
+
+    flycheck
+
+    flycheck-pos-tip
+
     tagedit
     
     magit
+
+    swiper
 
     zenburn-theme))
 
