@@ -30,6 +30,7 @@
 (require 'setup--ido)
 (require 'setup--company)
 (require 'cider)
+(require 'setup--magit)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
