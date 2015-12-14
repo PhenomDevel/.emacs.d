@@ -67,12 +67,12 @@
 (make-face 'mode-line-80col-face)
 
 (set-face-attribute 'mode-line nil
-                    :foreground "gray80" :background "gray20"
+                    :foreground "gray80" :background "#071207"
                     :inverse-video nil
                     :box '(:line-width 1 :color "black" :style nil))
 
 (set-face-attribute 'mode-line-inactive nil
-                    :foreground "gray80" :background "gray50"
+                    :foreground "gray80" :background "gray20"
                     :inverse-video nil
                     :box '(:line-width 1 :color "black" :style nil))
 
