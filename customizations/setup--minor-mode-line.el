@@ -6,7 +6,7 @@
 (setq-default
  mode-line-format
  '(; Position, including warning for 80 columns
-   (:propertize "%4l:" face mode-line-position-face)
+   (:propertize "%4l :" face mode-line-position-face)
    (:eval (propertize "%3c" 'face
                       (if (>= (current-column) 80)
                           'mode-line-80col-face
@@ -67,9 +67,9 @@
 (make-face 'mode-line-80col-face)
 
 (set-face-attribute 'mode-line nil
-                    :foreground "gray60" :background "gray20"
+                    :foreground "gray80" :background "gray20"
                     :inverse-video nil
-                    :box '(:line-width 6 :color "gray20" :style nil))
+                    :box '(:line-width 1 :color "black" :style nil))
 
 (set-face-attribute 'mode-line-inactive nil
                     :foreground "gray80" :background "gray40"
@@ -85,15 +85,15 @@
                     :inherit 'mode-line-face
                     :foreground "#c82829"
                     :background "#ffffff"
-                    :box '(:line-width 2 :color "#c82829"))
+                    :box '(:line-width 1 :color "#c82829"))
 
 (set-face-attribute 'mode-line-folder-face nil
                     :inherit 'mode-line-face
-                    :foreground "gray60")
+                    :foreground "gray50")
 
 (set-face-attribute 'mode-line-filename-face nil
                     :inherit 'mode-line-face
-                    :foreground "#eab700"
+                    :foreground "yellow"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-position-face nil
@@ -103,7 +103,7 @@
 
 (set-face-attribute 'mode-line-mode-face nil
                     :inherit 'mode-line-face
-                    :foreground "gray80")
+                    :foreground "gray100")
 
 (set-face-attribute 'mode-line-minor-mode-face nil
                     :inherit 'mode-line-mode-face

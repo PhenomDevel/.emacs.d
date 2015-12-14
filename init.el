@@ -29,8 +29,10 @@
 (require 'setup--js)
 (require 'setup--ido)
 (require 'setup--company)
-(require 'cider)
 (require 'setup--magit)
+(require 'setup--yasnippet)
+
+(require 'cider)
 (require 'cider-eval-sexp-fu)
 
 
