@@ -16,7 +16,7 @@
 
 ;; increase font size for better readability
 (set-face-attribute 'default nil :height 100
-		    :font "Sans Serif")
+		    :font "Courier New")
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
@@ -66,7 +66,7 @@
 
 (setq projectile-completion-mode 'ido)
 
-(set-face-background 'hl-line "#222222")
+(set-face-background 'hl-line "#555555")
 
 (set-face-foreground 'highlight nil)
 

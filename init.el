@@ -31,6 +31,7 @@
 (require 'setup--company)
 (require 'cider)
 (require 'setup--magit)
+(require 'cider-eval-sexp-fu)
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

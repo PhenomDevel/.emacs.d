@@ -69,6 +69,8 @@
 
     highlight-symbol
 
+    counsel
+
     ido
 
     ido-completing-read+
