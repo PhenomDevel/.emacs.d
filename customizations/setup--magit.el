@@ -1,10 +1,7 @@
 (require 'util)
 
 
-
-(define-key clojure-mode-map
-  (kbd "C-c M-s")
-  (lambda () (interactive) (magit-status)))
-
+(util/global-set-keys
+ "C-c M-s" 'magit-status)
 
 (provide 'setup--magit)
