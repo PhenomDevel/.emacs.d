@@ -72,9 +72,9 @@
                     :box '(:line-width 1 :color "black" :style nil))
 
 (set-face-attribute 'mode-line-inactive nil
-                    :foreground "gray80" :background "gray40"
+                    :foreground "gray80" :background "gray50"
                     :inverse-video nil
-                    :box '(:line-width 6 :color "gray40" :style nil))
+                    :box '(:line-width 1 :color "black" :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
                     :inherit 'mode-line-face
