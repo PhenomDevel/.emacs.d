@@ -87,6 +87,8 @@
 
     swiper
 
+    diminish
+
     zenburn-theme))
 
 (dolist (p my-packages)

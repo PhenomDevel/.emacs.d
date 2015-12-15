@@ -31,6 +31,7 @@
 (require 'setup--company)
 (require 'setup--magit)
 (require 'setup--yasnippet)
+(require 'setup--diminish)
 
 (require 'cider)
 (require 'cider-eval-sexp-fu)
@@ -40,7 +41,6 @@
 ;; Load Custom Code
 
 (load "component-snippets.el")
-
 
 
 
