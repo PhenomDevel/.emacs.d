@@ -7,22 +7,27 @@
  mode-line-format
  '(; Position, including warning for 80 columns
    (:propertize "%4l :" face mode-line-position-face)
-   (:eval (propertize "%3c" 'face
+   (:eval (propertize "%3c  " 'face
                       (if (>= (current-column) 80)
                           'mode-line-80col-face
                         'mode-line-position-face)))
                                         ; emacsclient [default -- keep?]
-   (:eval
-    (cond (buffer-read-only
-           (propertize " RO " 'face 'mode-line-read-only-face))
-          ((buffer-modified-p)
-           (propertize " ** " 'face 'mode-line-modified-face))
-          (t "  ")))
+   
                                         ; directory and buffer/file name
    (:propertize (:eval (shorten-directory default-directory 30))
                 face mode-line-folder-face)
-   (:propertize "%b"
-                face mode-line-filename-face)
+
+   (:eval
+    (cond (buffer-read-only
+           (propertize "%b"
+                       'face 'mode-line-filename-read-only-face))
+          ((buffer-modified-p)
+           (propertize "%b"
+                       'face 'mode-line-filename-modified-face))
+          (t (propertize "%b"
+                         'face 'mode-line-filename-face))))
+   
+   
                                         ; narrow [default -- keep?]
    " %n "
                                         ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
@@ -60,6 +65,8 @@
 (make-face 'mode-line-modified-face)
 (make-face 'mode-line-folder-face)
 (make-face 'mode-line-filename-face)
+(make-face 'mode-line-filename-read-only-face)
+(make-face 'mode-line-filename-modified-face)
 (make-face 'mode-line-position-face)
 (make-face 'mode-line-mode-face)
 (make-face 'mode-line-minor-mode-face)
@@ -93,7 +100,17 @@
 
 (set-face-attribute 'mode-line-filename-face nil
                     :inherit 'mode-line-face
+                    :foreground "green"
+                    :weight 'bold)
+
+(set-face-attribute 'mode-line-filename-modified-face nil
+                    :inherit 'mode-line-face
                     :foreground "yellow"
+                    :weight 'bold)
+
+(set-face-attribute 'mode-line-filename-read-only-face nil
+                    :inherit 'mode-line-face
+                    :foreground "red"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-position-face nil
