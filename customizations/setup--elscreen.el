@@ -1,9 +1,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Init
 
-(elscreen-start)
 
-(elscreen-persist-mode 1)
+(elscreen-start)
 
 (elscreen-toggle-display-tab)
 
