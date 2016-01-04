@@ -32,7 +32,7 @@
 (require 'setup--magit)
 (require 'setup--yasnippet)
 (require 'setup--diminish)
-
+(require 'setup--paren)
 (require 'cider)
 (require 'cider-eval-sexp-fu)
 
