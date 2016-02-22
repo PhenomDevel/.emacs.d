@@ -13,8 +13,8 @@
 (require 'setup--elscreen)
 (require 'setup--navigation)
 (require 'setup--ui)
-(require 'setup--zenburn)
 (require 'setup--rainbow-delimiters)
+(require 'setup--zenburn)
 (require 'setup--minor-mode-line)
 (require 'setup--org)
 (require 'setup--editing)
@@ -33,10 +33,12 @@
 (require 'setup--yasnippet)
 (require 'setup--diminish)
 (require 'setup--paren)
+
+;; CLJS
+
 (require 'cider)
 (require 'cider-eval-sexp-fu)
-
-
+(require 'setup--figwheel)
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load Custom Code
 
@@ -94,12 +96,3 @@
 ;; magit windows specific config - ssh-agency package required
 (setenv "GIT_ASKPASS" "git-gui--askpass")
 (setenv "SSH_ASKPASS" "git-gui--askpass")
-
-
-
-
-
-
-
-
-

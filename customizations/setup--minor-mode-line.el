@@ -81,7 +81,7 @@
                     :box '(:line-width 1 :color "gray20" :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
-                    :inherit 'mode-line-face
+                    :inherit 'mode-line-face 
                     :foreground "#4271ae"
                     :box '(:line-width 2 :color "#4271ae"))
 
