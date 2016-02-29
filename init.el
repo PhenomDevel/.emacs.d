@@ -21,6 +21,7 @@
 (require 'setup--shell-integration)
 (require 'setup--smex)
 (require 'setup--highlight-symbol)
+(require 'setup--sane-defaults)
 
 ;; Other Stuff
 (require 'setup--misc)
