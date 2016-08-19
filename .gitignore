@@ -1,0 +1,13 @@
+elpa/
+projectile*
+.recent*
+.smex*
+cider*
+url/
+server/
+eshell/
+auto-save-list/
+places
+site-lisp/
+themes/
+.mc-lists.el
