@@ -23,10 +23,13 @@
                        'face 'mode-line-filename-modified-face))
           (t (propertize "%b"
                          'face 'mode-line-filename-face))))
-   
-   
+
+
                                         ; narrow [default -- keep?]
    " %n "
+
+
+
                                         ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
    (vc-mode vc-mode)
    "  %["
@@ -39,9 +42,18 @@
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
    "]    "
-                                        ; nyan-mode uses nyan cat as an alternative to %p
-   (:eval (when nyan-mode (list (nyan-create))))
+   "["
+   (:eval (format "%d: " (elscreen-get-current-screen)))
+   (:eval (let ((nickname (elscreen-get-screen-nickname (elscreen-get-current-screen))))
+            (cond
+             (nickname
+              nickname)
+             (t
+              "*unnamed*"))))
+   "]"
    ))
+
+
 
 ;; Helper function
 (defun shorten-directory (dir max-length)
@@ -71,7 +83,7 @@
 (make-face 'mode-line-80col-face)
 
 (set-face-attribute 'mode-line nil
-                    :foreground "gray80" :background "#072907"
+                    :foreground "gray80" :background "#222"
                     :inverse-video nil
                     :box '(:line-width 1 :color "black" :style nil))
 
@@ -81,7 +93,7 @@
                     :box '(:line-width 1 :color "gray20" :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
-                    :inherit 'mode-line-face 
+                    :inherit 'mode-line-face
                     :foreground "#4271ae"
                     :box '(:line-width 2 :color "#4271ae"))
 

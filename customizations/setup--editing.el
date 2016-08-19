@@ -71,7 +71,8 @@
       (ns-get-selection-internal 'CLIPBOARD)
     (quit nil)))
 
-(setq electric-indent-mode t)
+;;(setq electric-indent-mode t)
 
+(global-set-key (kbd "M-C-r") 'er/expand-region)
 
 (provide 'setup--editing)

@@ -3,7 +3,7 @@
 ;;;;
 
 ;; Enable paredit for Clojure
-(add-hook 'clojure-mode-hook 'enable-paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 ;; This is useful for working with camel-case tokens, like names of
 ;; Java classes (e.g. JavaClassName)
@@ -30,14 +30,14 @@
 ;;;;
 
 ;; provides minibuffer documentation for the code you're typing into the repl
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook #'eldoc-mode)
 
 ;; go right to the REPL buffer when it's finished connecting
 (setq cider-repl-pop-to-buffer-on-connect t)
 
 ;; When there's a cider error, show its buffer and switch to it
 (setq cider-show-error-buffer t)
-(setq cider-auto-select-error-buffer t)
+;;(setq cider-auto-select-error-buffer t)
 
 ;; Where to store the cider history.
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
@@ -81,74 +81,5 @@
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
 
-
-(setq cider-repl-result-prefix ";=> ")
-
-(define-clojure-indent
-  (defroutes 'defun)
-  (match 'defun)
-  (letk 'defun)
-  (context 2)
-  (fnk 'defun)
-  (defnk 'defun)
-  (set-env! 'defun)
-  (get-env 'defun)
-  (println 'defun)
-  (lazy-seq'defun)
-  (routes 'defun)
-  (system-map 'defun)
-  (describe 'defun)
-  (context 'defun)
-  (it 'defun)
-  (facts 'defun)
-  (fact 'defun)
-  (future-facts 'defun)
-  (future-fact 'defun)
-  (pprint 'defun)
-  (render 'defun)
-  (ident 'defun)
-  (will-update 'defun)
-  (did-update 'defun)
-  (did-mount 'defun)
-  (will-unmount 'defun)
-  (render-state 'defun)
-  (init-state 'defun)
-  (will-mount 'defun)
-  (input 'defun)
-  (go 'defun)
-  (form 'defun)
-  (update! 'defun)
-  (let-routes 'defun)
-  (html 'defun)
-  (doall 'defun)
-  (dosync 'defun)
-
-  ;; Compojure
-  (ANY 2)
-  (GET 'defun)
-  (PUT 'defun)
-  (POST 'defun)
-  (where 'defun)
-  (add-watch 'defun)
-  (listen! 'defun)
-
-  ;; Om Next
-  (query 'defun)
-  (params 'defun)
-  (add-root! 'defun)
-  (should-update 'defun)
-  (componentWillMount 'defun)
-  (componentDidMount 'defun)
-  (componentDidUpdate 'defun)
-  (componentWillUnmount 'defun)
-  (componentWillUpdate 'defun)
-  (shouldComponentUpdate 'defun)
-
-  ;; Wrapper
-  (form-to 'defun)
-
-  (letfun 'defun)
-  (on-click 'defun)
-  )
 
 (provide 'setup--clojure)
