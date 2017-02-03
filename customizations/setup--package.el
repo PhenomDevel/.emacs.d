@@ -72,7 +72,7 @@
     lua-mode
     scss-mode
     org
-
+    sass-mode
 
     ;; Git interaction
 

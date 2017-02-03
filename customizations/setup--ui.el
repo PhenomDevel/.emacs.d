@@ -3,7 +3,8 @@
 (menu-bar-mode -1)
 
 ;; Show line numbers
-(global-linum-mode)
+;;(global-linum-mode)
+
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.
@@ -15,10 +16,9 @@
   (scroll-bar-mode -1))
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 100
-		    :font "Courier New")
+(set-face-attribute 'default nil :height 140 :font "Ubuntu Mono")
 
-;; Uncomment the lines below by removing semicolons and play with the
+;; Uncoment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
 ;; (setq initial-frame-alist '((top . 0) (left . 0) (width . 177) (height . 53)))
@@ -85,9 +85,6 @@
           (lambda ()
             (font-lock-add-keywords nil '(("\\<\\(HACK\\|NOTE\\|FIXME\\|TODO\\|BUG\\|comment\\|INFO\\)"
                                            1 font-lock-warning-face t)))))
-
-
-
 
 
 (provide 'setup--ui)
