@@ -122,7 +122,9 @@
   ;; Reframe
   (register-handler 'defun)
   (register-sub 'defun)
-
+  (reg-sub 'defun)
+  (reg-event-fx 'defun)
+  (reg-event-db 'defun)
   )
 
 (provide 'setup--cider)

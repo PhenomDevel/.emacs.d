@@ -91,14 +91,3 @@
           (define-key paxedit-mode-map (kbd "M-u") 'paxedit-symbol-change-case)
           (define-key paxedit-mode-map (kbd "C-S-c") 'paxedit-symbol-copy)
           (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
-
-(define-key projectile-mode-map (kbd "C-S-s") 'counsel-git-grep)
-
-(global-set-key "\M-[1;5C"    'forward-word)
-(global-set-key "\M-[1;5D"    'backward-word)
-(define-key input-decode-map "\e[1;2D" [S-left])
-(define-key input-decode-map "\e[1;2C" [S-right])
-(define-key input-decode-map "\e[1;2B" [S-down])
-(define-key input-decode-map "\e[1;2A" [S-up])
-(define-key input-decode-map "\e[1;2F" [S-end])
-(define-key input-decode-map "\e[1;2H" [S-home])
