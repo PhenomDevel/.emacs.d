@@ -2,12 +2,16 @@
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Require Stuff
+
 (require 'setup--package)
 (require 'util)
 
+
 ;; UI Stuff
+
 (require 'setup--elscreen)
 (require 'setup--navigation)
 (require 'setup--ui)
@@ -22,7 +26,9 @@
 (require 'setup--highlight-symbol)
 (require 'setup--sane-defaults)
 
+
 ;; Other Stuff
+
 (require 'setup--js)
 (require 'setup--ido)
 (require 'setup--company)
@@ -38,6 +44,7 @@
 (require 'setup--clojure-refactor)
 (require 'setup--aggressive-indent)
 (require 'setup--fullframe)
+(require 'setup--flycheck)
 
 ;; CLJS
 
@@ -91,3 +98,9 @@
           (define-key paxedit-mode-map (kbd "M-u") 'paxedit-symbol-change-case)
           (define-key paxedit-mode-map (kbd "C-S-c") 'paxedit-symbol-copy)
           (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
+
+
+(global-set-key "\M-[1;2A" 'previous-line)
+(global-set-key "\M-[1;2B" 'next-line)
+;;(global-set-key "\M-[1;2C" 'forward-char)
+;;(global-set-key "\M-[1;2D" 'backward-char)

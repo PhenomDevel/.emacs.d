@@ -125,6 +125,7 @@
   (reg-sub 'defun)
   (reg-event-fx 'defun)
   (reg-event-db 'defun)
+  (reg-fx 'defun)
   )
 
 (provide 'setup--cider)

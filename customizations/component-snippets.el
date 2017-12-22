@@ -26,3 +26,10 @@
 
 (define-key cider-mode-map      (kbd "C-c I") (util-clojure/cider-cmd "(do (require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh-all))"))
 (define-key cider-repl-mode-map (kbd "C-c I") (util-clojure/cider-cmd "(do (require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh-all))"))
+
+
+(define-key cider-mode-map      (kbd "C-c f") (util/all-buffers-saved (util-clojure/cider-cmd "(user/fig-init)")))
+(define-key cider-repl-mode-map (kbd "C-c f") (util/all-buffers-saved (util-clojure/cider-cmd "(user/fig-init)")))
+
+(define-key cider-mode-map      (kbd "C-c F") (util/all-buffers-saved (util-clojure/cider-cmd "(do (user/system-restart!) (user/fig-init))")))
+(define-key cider-repl-mode-map (kbd "C-c F") (util/all-buffers-saved (util-clojure/cider-cmd "(do (user/system-restart!) (user/fig-init))")))

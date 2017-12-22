@@ -11,7 +11,7 @@
 (defvar my-packages
   '(;; Appeareance
 
-    diminish
+    ;; diminish
     rainbow-mode
     rainbow-delimiters
     zenburn-theme
@@ -22,7 +22,6 @@
 
 
     ;; Clojure
-
     cider
     clojure-mode
     clojure-mode-extra-font-locking
@@ -31,21 +30,16 @@
     paxedit
     flycheck
     flycheck-pos-tip
-    tagedit
-
 
     ;; Editing in general
-
     paredit
     multiple-cursors
-    elscreen
-    aggressive-indent
+    ;; aggressive-indent ;; NOTE deactivated for now
     expand-region
 
     ;; Search
-
     swiper
-    hydra
+    ;; hydra
     projectile
     company
     company-quickhelp
@@ -57,25 +51,23 @@
 
     ;; Misc
 
-    dash
+    ;; dash
     restclient
     yasnippet
     smex
     ido-ubiquitous
-    crm-custom
+    ;; crm-custom
     neotree
     fullframe
     which-key
 
     ;; Other Languages
-
     lua-mode
     scss-mode
     org
     sass-mode
 
     ;; Git interaction
-
     magit
     magit-popup
 

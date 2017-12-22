@@ -41,17 +41,9 @@
    (:propertize mode-line-process
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
-   "]    "
-   "["
-   (:eval (format "%d: " (elscreen-get-current-screen)))
-   (:eval (let ((nickname (elscreen-get-screen-nickname (elscreen-get-current-screen))))
-            (cond
-             (nickname
-              nickname)
-             (t
-              "*unnamed*"))))
-   "]"
-   ))
+   "]    "))
+
+
 
 
 
