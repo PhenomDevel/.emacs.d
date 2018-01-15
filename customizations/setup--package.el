@@ -48,15 +48,15 @@
     ido
     ido-completing-read+
 
-
     ;; Misc
+    tagedit
 
     ;; dash
     restclient
     yasnippet
     smex
-    ido-ubiquitous
-    ;; crm-custom
+    ;; ido-ubiquitous
+    crm-custom
     neotree
     fullframe
     which-key

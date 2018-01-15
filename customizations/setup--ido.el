@@ -6,9 +6,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ido Ubiquitous + crm-custom-mode
 ;; https://github.com/DarwinAwardWinner/crm-custom
-(require 'ido-ubiquitous)
+;; (require 'ido-ubiquitous)
 (require 'crm-custom)
-(ido-ubiquitous-mode 1)
+;; (ido-ubiquitous-mode 1)
 (crm-custom-mode 1)
 
 

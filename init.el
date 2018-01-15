@@ -12,7 +12,7 @@
 
 ;; UI Stuff
 
-(require 'setup--elscreen)
+;; (require 'setup--elscreen)
 (require 'setup--navigation)
 (require 'setup--ui)
 (require 'util--zoom)
@@ -34,7 +34,7 @@
 (require 'setup--company)
 (require 'setup--magit)
 (require 'setup--yasnippet)
-(require 'setup--diminish)
+;; (require 'setup--diminish)
 (require 'setup--paren)
 (require 'setup--multiple-cursors)
 (require 'setup--hydra)
@@ -42,7 +42,7 @@
 (require 'setup--elisp-editing)
 (require 'setup--clojure)
 (require 'setup--clojure-refactor)
-(require 'setup--aggressive-indent)
+;; (require 'setup--aggressive-indent)
 (require 'setup--fullframe)
 (require 'setup--flycheck)
 
@@ -77,7 +77,6 @@
 
 (util/global-set-keys "M-e" 'er/expand-region)
 
-
 (util/global-set-keys "<f7>" 'linum-mode)
 
 (eval-after-load "paxedit"
@@ -98,9 +97,3 @@
           (define-key paxedit-mode-map (kbd "M-u") 'paxedit-symbol-change-case)
           (define-key paxedit-mode-map (kbd "C-S-c") 'paxedit-symbol-copy)
           (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
-
-
-(global-set-key "\M-[1;2A" 'previous-line)
-(global-set-key "\M-[1;2B" 'next-line)
-;;(global-set-key "\M-[1;2C" 'forward-char)
-;;(global-set-key "\M-[1;2D" 'backward-char)
