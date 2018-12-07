@@ -42,7 +42,7 @@
 (setq cider-error-highlight-face 'error-face)
 
 (set-face-attribute 'cider-result-overlay-face nil :foreground "#66FF00" :weight 'bold :background nil)
-;;(set-face-attribute 'cider-fringe-good-face nil :foreground "#00CC53")
+(set-face-attribute 'cider-fringe-good-face nil :foreground "#00CC53")
 
 (setq eval-sexp-fu-flash-face 'success-face)
 (setq eval-sexp-fu-flash-duration 0.3)

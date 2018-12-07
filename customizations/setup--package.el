@@ -20,7 +20,6 @@
     highlight-symbol
     ido-vertical-mode
 
-
     ;; Clojure
     cider
     clojure-mode
