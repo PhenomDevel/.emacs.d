@@ -25,6 +25,9 @@
   '(define-key cider-mode-map (kbd "C-c C-d") 'cider-doc))
 
 (eval-after-load "cider"
+  '(define-key cider-mode-map (kbd "C-c C-r") 'cider-eval-region))
+
+(eval-after-load "cider"
   '(define-key cider-mode-map (kbd "C-c M-o") 'cider-repl-clear-buffer))
 
 (defface error-face
@@ -54,6 +57,7 @@
           (lambda ()
             (font-lock-add-keywords nil '(("\\<\\(HACK\\|NOTE\\|FIXME\\|TODO\\|BUG\\|comment\\|INFO\\)"
                                            1 'cider-error-highlight-face t)))))
+
 
 (define-clojure-indent
   (defroutes 'defun)

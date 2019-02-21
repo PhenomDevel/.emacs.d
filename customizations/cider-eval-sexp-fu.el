@@ -32,7 +32,7 @@
 
 ;;; Code:
 
-(require 'highlight)
+;; (require 'highlight)
 (require 'eval-sexp-fu)
 
 (defun cider-esf--bounds-of-last-sexp ()
@@ -50,9 +50,6 @@ area is identical to that which is evaluated."
     (eval-sexp-fu-flash (cider-esf--bounds-of-last-sexp)))
   (define-eval-sexp-fu-flash-command cider-pprint-eval-last-sexp
     (eval-sexp-fu-flash (cider-esf--bounds-of-last-sexp)))
-  (define-eval-sexp-fu-flash-command cider-eval-defun-at-point
-    (eval-sexp-fu-flash (let ((bounds (cider--region-for-defun-at-point)))
-                          (cons (first bounds) (second bounds)))))
 
   ;; Defines:
   ;; `eval-sexp-fu-cider-sexp-inner-list',
