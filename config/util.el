@@ -1,5 +1,6 @@
 (require 'cl)
 (require 'dash)
+(require 'package)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -23,6 +24,21 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Windows
+(defun global-text-scale-adjust (inc) (interactive)
+       (text-scale-set 1)
+       (kill-local-variable 'text-scale-mode-amount)
+       (setq-default text-scale-mode-amount (+ text-scale-mode-amount inc)))
+
+(defun toggle-maximize-buffer (zoom) "Maximize buffer"
+       (interactive)
+       (if (= 1 (length (window-list)))
+           (progn
+             (text-scale-adjust 0)
+             (jump-to-register '_))
+         (progn
+           (window-configuration-to-register '_)
+           (delete-other-windows)
+           (global-text-scale-adjust (+ text-scale-mode-amount zoom)))))
 
 (setq util/window-toggle-direction 1)
 
@@ -52,6 +68,8 @@
 
     (kill-buffer buffer)
     (delete-window buffer-window)))
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -99,6 +117,19 @@
       (let ((k (car x))
             (f (cadr x)))
         (local-set-key (kbd k) f)))))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Manage installed packages
+
+(defun util--package/install-package! (pkg)
+  (unless (package-installed-p pkg)
+    (package-refresh-contents)
+    (package-install pkg)))
+
+(defun util--package/install-packages! (pkgs)
+  (dolist (pkg pkgs)
+    (util--package/install-package! pkg)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

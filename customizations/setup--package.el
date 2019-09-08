@@ -38,6 +38,7 @@
 
     ;; Search
     swiper
+
     ;; hydra
     projectile
     company
@@ -70,6 +71,7 @@
     magit
     magit-popup
 
+    markdown-mode+
     ))
 
 (dolist (p my-packages)

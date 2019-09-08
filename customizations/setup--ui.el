@@ -16,7 +16,7 @@
   (scroll-bar-mode -1))
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :height 140 :font "Andale Mono")
+(set-face-attribute 'default nil :height 160 :font "Moncao")
 
 ;; Uncoment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
