@@ -37,4 +37,11 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
+;; Set some global keybindings
+(global-set-key (kbd "C-c jt") 'beginning-of-buffer)
+(global-set-key (kbd "C-c jb") 'end-of-buffer)
+
+;; Do not create lock files. They just clutter the disk
+(setq create-lockfiles nil)
+
 (provide 'setup__emacs)

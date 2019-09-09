@@ -2,13 +2,13 @@
 ;; swapping with neighbor symbolic expressions, and enclosing specified expressions in a comment expression.
 
 (use-package
- paxedit
+  paxedit
 
- :ensure t
+  :ensure t
 
- :config
- (eval-after-load "paxedit"
-   '(progn (define-key paxedit-mode-map (kbd "ESC-<right>") 'paxedit-transpose-forward)
+  :config
+  (eval-after-load 'paxedit
+    (progn (define-key paxedit-mode-map (kbd "ESC-<right>") 'paxedit-transpose-forward)
            (define-key paxedit-mode-map (kbd "ESC-<left>") 'paxedit-transpose-backward)
            (define-key paxedit-mode-map (kbd "ESC-<up>") 'paxedit-backward-up)
            (define-key paxedit-mode-map (kbd "ESC-<down>") 'paxedit-backward-end)
@@ -26,10 +26,10 @@
            (define-key paxedit-mode-map (kbd "C-S-c") 'paxedit-symbol-copy)
            (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
 
- ;; TODO: Keybindings
+  ;; TODO: Keybindings
 
- ;; Add more
- )
+  ;; Add more
+  )
 
 
 (provide 'setup__paxedit)

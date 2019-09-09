@@ -11,7 +11,9 @@
  (setq highlight-symbol-idle-delay 1.5)
 
  ;; TODO: Keybindings
-
+ :bind
+ (("C-c h" . highlight-symbol))
+ 
  ;; Add more
  )
 

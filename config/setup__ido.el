@@ -13,7 +13,8 @@
  (ido-everywhere 1)
  (set-default 'imenu-auto-rescan t)
  (define-key ido-common-completion-map (kbd "SPC") 'ido-restrict-to-matches)
-
+ (define-key ido-file-completion-map (kbd "C-w") 'ido-delete-backward-updir)
+ 
  ;; Add more
  )
 
