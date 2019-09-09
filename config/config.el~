@@ -30,52 +30,47 @@
 
 ;; Basics
 (require 'use-package)
-(require 'setup__emacs)
-(require 'setup__projectile)
-(require 'setup__yasnippet)
 (require 'setup__swiper)
-(require 'setup__clojure-mode)
-;; Appeareance
-(require 'setup__theme)
-(require 'setup__rainbow-delimiters)
+(require 'setup__ido-completing-read+)
+(require 'setup__crm-custom)
 (require 'setup__ido)
 (require 'setup__ido-vertical-mode)
+(require 'setup__multiple-cursors)
+(require 'setup__company)
+;; (require 'setup__company-quickhelp)
+(require 'setup__counsel)
+(require 'setup__smex)
+(require 'setup__fullframe)
+(require 'setup__which-key)
+
+;; Appeareance
+(require 'setup__emacs)
+(require 'setup__theme)
+(require 'setup__minor-mode-line)
+
+;; Project Helper
+(require 'setup__projectile)
+(require 'setup__yasnippet)
+(require 'setup__magit)
+(require 'setup__magit-popup)
+
+;; Programming
+(require 'setup__highlight-symbol)
+(require 'setup__rainbow-delimiters)
 (require 'setup__cider)
 (require 'setup__paxedit)
 (require 'setup__clj-refactor)
 (require 'setup__cider-eval-sexp-fu)
+(require 'setup__expand-region)
+(require 'setup__clojure-mode)
+(require 'setup__paredit)
 
-
-
-;; flycheck,
-;; flycheck-pos-tip?
-;; expand-region
-;; multiple-cursors
-;; paredit
-;; ido-vertical-mode
-;; highlight-symbol
+;; TODO Later
 ;; rainbow-mode
-(require 'setup__company)
-(require 'setup__company-quickhelp)
-(require 'setup__counsel)
-(require 'setup__smex)
-;; fullframe
-;; which-key
-
-
-(require 'setup__magit)
-(require 'setup__magit-popup)
-
-
-;; Later
 ;; lua-mode
 ;; sass-mode
 ;; markdown-mode, markdown-mode+
-
-
-;; Languages
-
-
-
+;; flycheck,
+;; flycheck-pos-tip?
 
 (provide 'config)
