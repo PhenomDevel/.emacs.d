@@ -1,3 +1,5 @@
+;; Be able to edit multiple lines at once
+
 (use-package
  multiple-cursors
 

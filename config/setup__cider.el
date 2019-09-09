@@ -10,6 +10,19 @@
 (set-face-attribute 'success-face nil :weight 'bold)
 (set-face-attribute 'error-face nil :weight 'bold)
 
+(defun util/all-buffers-saved (f)
+  (let ((g f))
+    (lambda ()
+      (interactive)
+      (util/save-all-buffers!)
+      (funcall g))))
+
+(defun util-clojure/cider-cmd (cmd)
+  (let ((cmd cmd))
+    (lambda ()
+      (interactive)
+      (cider-interactive-eval cmd))))
+
 (use-package
  cider
 
@@ -118,6 +131,24 @@
    (reg-fx 'defun)
    )
 
+ ;; Doctronic specific component keybindings
+ (eval-after-load 'cider
+   (define-key cider-mode-map      (kbd "C-c i") (util/all-buffers-saved (util-clojure/cider-cmd "(user/system-restart!)")))
+   (define-key cider-repl-mode-map (kbd "C-c i") (util/all-buffers-saved (util-clojure/cider-cmd "(user/system-restart!)")))
+
+   (define-key cider-mode-map      (kbd "C-c k") (util/all-buffers-saved (util-clojure/cider-cmd "(user/system-stop!)")))
+   (define-key cider-repl-mode-map (kbd "C-c k") (util/all-buffers-saved (util-clojure/cider-cmd "(user/system-stop!)")))
+
+   (define-key cider-mode-map      (kbd "C-c I") (util-clojure/cider-cmd "(do (require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh-all))"))
+   (define-key cider-repl-mode-map (kbd "C-c I") (util-clojure/cider-cmd "(do (require 'clojure.tools.namespace.repl) (clojure.tools.namespace.repl/refresh-all))"))
+
+   (define-key cider-mode-map      (kbd "C-c f") (util/all-buffers-saved (util-clojure/cider-cmd "(user/fig-init)")))
+   (define-key cider-repl-mode-map (kbd "C-c f") (util/all-buffers-saved (util-clojure/cider-cmd "(user/fig-init)")))
+
+   (define-key cider-mode-map      (kbd "C-c F") (util/all-buffers-saved (util-clojure/cider-cmd "(do (user/system-restart!) (user/fig-init))")))
+   (define-key cider-repl-mode-map (kbd "C-c F") (util/all-buffers-saved (util-clojure/cider-cmd "(do (user/system-restart!) (user/fig-init))"))))
+
+ ;; TODO: Keybindings
  :bind
  (("C-c C-d" . cider-doc)
   ("C-c C-r" . cider-eval-region)

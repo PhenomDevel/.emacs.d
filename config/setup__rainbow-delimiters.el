@@ -1,3 +1,5 @@
+;; Show parens with rainbow colors to better distinguish them
+
 (use-package
  rainbow-delimiters
 

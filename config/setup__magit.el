@@ -1,3 +1,5 @@
+;; Use git with a graphical interface within emacs
+
 (use-package
  magit
 

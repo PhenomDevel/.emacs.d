@@ -1,3 +1,5 @@
+;; Allows easy refactoring of clojure code
+
 (use-package
  clj-refactor
 

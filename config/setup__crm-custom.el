@@ -4,6 +4,9 @@
  :ensure t
 
  :config
- (crm-custom-mode 1))
+ (crm-custom-mode 1)
+
+ ;; Add more
+ )
 
 (provide 'setup__crm-custom)

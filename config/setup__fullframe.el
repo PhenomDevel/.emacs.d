@@ -1,3 +1,5 @@
+;; Forces some commands to automatically run in a single fullscreen frame
+
 (use-package
  fullframe
 

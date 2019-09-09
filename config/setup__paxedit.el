@@ -1,3 +1,6 @@
+;; Paxedit allows the quick refactoring of symbolic expressions from deleting,
+;; swapping with neighbor symbolic expressions, and enclosing specified expressions in a comment expression.
+
 (use-package
  paxedit
 

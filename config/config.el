@@ -42,6 +42,7 @@
 (require 'setup__smex)
 (require 'setup__fullframe)
 (require 'setup__which-key)
+(require 'setup__rainbow-mode)
 
 ;; Appeareance
 (require 'setup__emacs)
@@ -66,7 +67,7 @@
 (require 'setup__paredit)
 
 ;; TODO Later
-;; rainbow-mode
+
 ;; lua-mode
 ;; sass-mode
 ;; markdown-mode, markdown-mode+

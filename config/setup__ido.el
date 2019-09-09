@@ -1,3 +1,4 @@
+;; Interactively do things - fast and efficent alternative to iswitch
 (use-package
  ido
 

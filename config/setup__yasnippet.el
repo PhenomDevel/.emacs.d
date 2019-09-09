@@ -1,3 +1,5 @@
+;; Provide snippets and be able to interpose them into any file
+
 (defvar snippets-directories
   '("~/.emacs.d/config/snippets"))
 

@@ -1,3 +1,5 @@
+;; Package to expand a region step by step for selection
+
 (use-package
  expand-region
 

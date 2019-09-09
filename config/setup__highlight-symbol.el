@@ -1,3 +1,5 @@
+;; Highlight symbols within a buffer and navigate between them
+
 (use-package
  highlight-symbol
 
@@ -8,6 +10,9 @@
  (setq highlight-symbol-on-navigation-p t)
  (setq highlight-symbol-idle-delay 1.5)
 
+ ;; TODO: Keybindings
+
+ ;; Add more
  )
 
 (provide 'setup__highlight-symbol)

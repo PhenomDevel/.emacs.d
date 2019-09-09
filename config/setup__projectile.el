@@ -1,3 +1,5 @@
+;; Easy project management and file management
+
 (use-package
  projectile
 
@@ -11,11 +13,14 @@
  (setq projectile-require-project-root nil)
  (setq projectile-mode-line-lighter "P")
 
+ ;; TODO: Keybindings
  :bind
  (("C-c p" . projectile-command-map))
 
  :diminish
  projectile-mode
+
+ ;; Add more
  )
 
 

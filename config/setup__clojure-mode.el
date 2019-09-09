@@ -1,3 +1,5 @@
+;; Provides helpful features to work with clojure
+
 (use-package
  clojure-mode
 

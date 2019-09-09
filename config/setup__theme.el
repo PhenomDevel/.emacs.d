@@ -1,3 +1,5 @@
+;; Setup zenburn theme
+
 (use-package
  zenburn-theme
 

@@ -1,3 +1,5 @@
+;; Shows hints / matches in a tooltip like dropdown
+
 (use-package
  company
 
