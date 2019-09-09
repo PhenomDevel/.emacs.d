@@ -1,4 +1,0 @@
-# name: tpp
-# key: tpp
-# --
-(#(do (clojure.pprint/pprint %) %))

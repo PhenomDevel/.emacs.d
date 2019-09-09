@@ -1,5 +1,0 @@
-# name: pp
-# key: pp
-# --
-
-(clojure.pprint/pprint $0$>)
