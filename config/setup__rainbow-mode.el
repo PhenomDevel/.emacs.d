@@ -1,18 +1,18 @@
 ;; Show the colors for colorcodes / colornames directly within the buffer
 
 (use-package
- rainbow-mode
+  rainbow-mode
 
- :ensure
- t
+  :ensure
+  t
 
- :commands
- (rainbow-mode)
+  :commands
+  (rainbow-mode)
 
- :bind
- (("C-c rm" . rainbow-mode))
+  :bind
+  (("C-c rm" . rainbow-mode))
 
- ;; Add more
- )
+  ;; Add more
+  )
 
 (provide 'setup__rainbow-mode)
