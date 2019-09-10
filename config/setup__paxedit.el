@@ -11,7 +11,10 @@
   t
 
   :hook
-  (prog-mode . paxedit-mode)
+  ((prog-mode . paxedit-mode)
+   (cider-mode . paxedit-mode)
+   (clojure-mode . paxedit-mode)
+   (cider-repl-mode . paxedit-mode))
 
   :config
   (eval-after-load 'paxedit

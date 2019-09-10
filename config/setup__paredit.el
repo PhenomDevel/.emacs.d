@@ -10,7 +10,11 @@
   t
 
   :hook
-  (prog-mode . paredit-mode)
+  ((prog-mode . paredit-mode)
+   (cider-mode . paredit-mode)
+   (clojure-mode . paredit-mode)
+   (cider-repl-mode . paredit-mode)
+   (with-editor-mode . paredit-mode))
 
   ;; TODO: Keybindings
   :bind
