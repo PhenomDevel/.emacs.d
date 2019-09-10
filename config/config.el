@@ -26,6 +26,7 @@
     (package-refresh-contents)
     (package-install p)))
 
+
 ;; =============================================================================
 ;; Requires
 ;; =============================================================================
@@ -34,11 +35,11 @@
 (require 'use-package)
 ;; (require 'setup__use-package)
 
-(require 'setup__ido)
 (require 'setup__swiper)
 (require 'setup__crm-custom)
 (require 'setup__ido-completing-read+)
 (require 'setup__ido-vertical-mode)
+(require 'setup__ido)
 (require 'setup__multiple-cursors)
 (require 'setup__counsel)
 (require 'setup__smex)
@@ -47,6 +48,7 @@
 (require 'setup__rainbow-mode)
 (require 'setup__company)
 ;; (require 'setup__company-quickhelp)
+
 
 
 ;; =============================================================================
@@ -78,7 +80,7 @@
 (require 'setup__expand-region)
 (require 'setup__clojure-mode)
 (require 'setup__paredit)
-
+(require 'setup__sass-mode)
 ;; TODO Later
 
 ;; lua-mode
