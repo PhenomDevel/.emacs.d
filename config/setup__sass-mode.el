@@ -6,7 +6,8 @@
   :defer true
 
   :mode
-  "\\.\\(scss\\|sass\\)\\'"
+  (("\\.scss\\'" . sass-mode)
+   ("\\.sass\\'" . sass-mode))
   
   ;; Add more
   )

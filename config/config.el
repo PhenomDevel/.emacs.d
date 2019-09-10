@@ -81,16 +81,9 @@
 (require 'setup__clojure-mode)
 (require 'setup__paredit)
 (require 'setup__sass-mode)
+(require 'setup__markdown-mode)
+(require 'setup__lua-mode)
 
-
-;; TODO Later
-
-;; lua-mode
-;; sass-mode
-;; markdown-mode, markdown-mode+
-;; flycheck,
-;; flycheck-pos-tip?
-
-
+;; (require 'setup__flycheck)
 
 (provide 'config)
