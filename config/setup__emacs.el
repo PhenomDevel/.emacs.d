@@ -47,6 +47,6 @@
 
 (setq initial-major-mode 'emacs-lisp-mode)
 
-;; (dashboard-setup-startup-hook)
+(dashboard-setup-startup-hook)
 
 (provide 'setup__emacs)
