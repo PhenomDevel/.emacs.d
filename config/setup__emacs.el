@@ -41,7 +41,9 @@
 
 
 ;; Do not create lock files. They just clutter the disk
-(setq create-lockfiles nil)
+(setq create-lockfiles nil
+      auto-save-default nil
+      make-backup-files nil)
 
 (setq initial-major-mode 'emacs-lisp-mode)
 
