@@ -84,6 +84,5 @@
 (require 'setup__markdown-mode)
 (require 'setup__lua-mode)
 
-;; (require 'setup__flycheck)
 
 (provide 'config)
