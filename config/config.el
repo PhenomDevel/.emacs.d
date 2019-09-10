@@ -33,7 +33,7 @@
 ;; Basics
 
 (require 'use-package)
-;; (require 'setup__use-package)
+(require 'setup__use-package)
 
 (require 'setup__swiper)
 (require 'setup__crm-custom)
