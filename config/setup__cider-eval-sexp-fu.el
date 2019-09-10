@@ -3,6 +3,12 @@
 (use-package
  cider-eval-sexp-fu
 
- :ensure t)
+ :ensure t
+
+ :requires
+ (cider)
+
+ :commands
+ (cider-connect))
 
 (provide 'setup__cider-eval-sexp-fu)

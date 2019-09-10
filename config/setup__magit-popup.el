@@ -1,8 +1,15 @@
 (use-package
- magit-popup
+  magit-popup
 
- :ensure t
+  :ensure t
 
- )
+  :defer t
+  
+  :after magit
+
+  :commands
+  (magit-status magit-log-all magit-blame-addition)
+  
+  )
 
 (provide 'setup__magit-popup)

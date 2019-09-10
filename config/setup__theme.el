@@ -1,12 +1,12 @@
 ;; Setup zenburn theme
 
 (use-package
- zenburn-theme
+  zenburn-theme
 
- :ensure t
+  :ensure t
 
- :config
- (setq custom-safe-themes t) ; Always trust custom themes to prevent warning
- (load-theme 'zenburn))
+  :config
+  (setq custom-safe-themes t) ; Always trust custom themes to prevent warning
+  (load-theme 'zenburn))
 
 (provide 'setup__theme)

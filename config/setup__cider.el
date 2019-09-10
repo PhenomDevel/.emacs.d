@@ -35,7 +35,7 @@
   :ensure t
 
   :after clojure-mode
-
+  
   :commands
   (cider-connect)
 

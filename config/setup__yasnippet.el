@@ -4,19 +4,26 @@
   '("~/.emacs.d/config/snippets"))
 
 (use-package
- yasnippet
+  yasnippet
 
- :ensure t
+  :ensure
+  t
+  
+  :defer
+  t
 
- :config
- (with-eval-after-load 'yasnippet
-   (setq yas-snippet-dirs snippets-directories))
- (yas-reload-all)
- (yas-global-mode)
+  :hook
+  (prog-mode . yas-minor-mode)
+  
+  :config
+  (with-eval-after-load 'yasnippet
+    (setq yas-snippet-dirs snippets-directories))
+  (yas-reload-all)
 
- :diminish
- yas-minor-mode
- )
+  :diminish
+  yas-minor-mode
+
+  )
 
 
 (provide 'setup__yasnippet)

@@ -7,20 +7,21 @@
 
 ;;; Code:
 (use-package
- smex
+  smex
+  
+  :ensure t
 
- :init
- (smex-initialize)
+  :config
+  (smex-initialize)
 
- :ensure t
+  :commands
+  (smex)
 
- :config
+  :bind
+  (("M-x" . smex))
 
- :bind
- (("M-x" . smex))
-
- ;; Add more
- )
+  ;; Add more
+  )
 
 (provide 'setup__smex)
 

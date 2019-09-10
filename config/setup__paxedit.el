@@ -4,7 +4,14 @@
 (use-package
   paxedit
 
-  :ensure t
+  :ensure
+  t
+
+  :defer
+  t
+
+  :hook
+  (prog-mode . paxedit-mode)
 
   :config
   (eval-after-load 'paxedit

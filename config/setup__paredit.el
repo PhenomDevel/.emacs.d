@@ -1,20 +1,24 @@
 ;; Provides easy structured editing of S-expression data
 
 (use-package
- paredit
+  paredit
 
- :ensure t
+  :ensure
+  t
 
- :init
- (add-hook 'prog-mode-hook #'paredit-mode)
+  :defer
+  t
 
- :diminish
- paredit-mode
+  :hook
+  (prog-mode . paredit-mode)
 
- ;; TODO: Keybindings
+  ;; TODO: Keybindings
+  :bind
+  (("C-j" . paredit-backward))
+  
+  ;; Add more
 
- ;; Add more
+  )
 
- )
 
 (provide 'setup__paredit)

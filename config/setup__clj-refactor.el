@@ -1,16 +1,16 @@
 ;; Allows easy refactoring of clojure code
 
 (use-package
- clj-refactor
+  clj-refactor
 
- :ensure
- t
+  :ensure
+  t
 
- :requires
- (clojure-mode)
+  :requires
+  (clojure-mode)
 
- :config
- (cljr-add-keybindings-with-prefix "C-c C-r")
- )
+  :config
+  (cljr-add-keybindings-with-prefix "C-c C-r")
+  )
 
 (provide 'setup__clj-refactor)

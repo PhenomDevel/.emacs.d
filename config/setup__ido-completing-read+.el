@@ -1,14 +1,14 @@
 ;; Package that helps with search for patterns
 
 (use-package
- ido-completing-read+
+  ido-completing-read+
 
- :ensure t
+  :ensure t
 
- :config
- (ido-ubiquitous-mode 1)
+  :config
+  (ido-ubiquitous-mode 1)
 
- ;; Add more
- )
+  ;; Add more
+  )
 
 (provide 'setup__ido-completing-read+)

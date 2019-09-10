@@ -7,8 +7,6 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
-(set-face-attribute 'default nil :height 160 :font "Moncao")
-
 (blink-cursor-mode 0)
 (setq ring-bell-function 'ignore)
 
@@ -41,7 +39,12 @@
 (global-set-key (kbd "C-c jt") 'beginning-of-buffer)
 (global-set-key (kbd "C-c jb") 'end-of-buffer)
 
+
 ;; Do not create lock files. They just clutter the disk
 (setq create-lockfiles nil)
+
+(setq initial-major-mode 'emacs-lisp-mode)
+
+;; (dashboard-setup-startup-hook)
 
 (provide 'setup__emacs)
