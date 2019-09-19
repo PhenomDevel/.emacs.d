@@ -34,7 +34,6 @@
 
 (require 'use-package)
 (require 'setup__use-package)
-
 (require 'setup__swiper)
 (require 'setup__crm-custom)
 (require 'setup__ido-completing-read+)
@@ -48,8 +47,6 @@
 (require 'setup__rainbow-mode)
 (require 'setup__company)
 ;; (require 'setup__company-quickhelp)
-
-
 
 ;; =============================================================================
 ;; Appeareance
@@ -66,7 +63,7 @@
 (require 'setup__yasnippet)
 (require 'setup__magit)
 (require 'setup__magit-popup)
-
+(require 'setup__linum)
 
 ;; =============================================================================
 ;; Programming
@@ -84,5 +81,9 @@
 (require 'setup__markdown-mode)
 (require 'setup__lua-mode)
 
+
+;; TODO:
+;; - smartrep
+;; - winner ?
 
 (provide 'config)
