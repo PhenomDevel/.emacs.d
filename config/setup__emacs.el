@@ -1,5 +1,4 @@
 ;; General settings for emacs
-
 (menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
@@ -35,10 +34,13 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
-;; Set some global keybindings
+;; =============================================================================
+;; Set some global bindings
 (global-set-key (kbd "C-c jt") 'beginning-of-buffer)
 (global-set-key (kbd "C-c jb") 'end-of-buffer)
 
+;; Globally activate eldoc-mode
+(global-eldoc-mode)
 
 ;; Do not create lock files. They just clutter the disk
 (setq create-lockfiles nil
