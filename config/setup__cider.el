@@ -45,7 +45,7 @@
    cider-use-overlays t
    cider-overlays-use-font-lock t
    eldoc-echo-area-use-multiline-p t
-   cider-repl-pop-to-buffer-on-connect nil
+   cider-repl-pop-to-buffer-on-connect t
    cider-show-error-buffer t
    cider-repl-history-file "~/.emacs.d/cider-history"
    cider-repl-wrap-history t
@@ -55,6 +55,7 @@
    cider-prompt-save-file-on-load nil
    cider-repl-use-clojure-font-lock t
    cider-repl-display-help-banner nil
+   cider-repl-scroll-on-output t
    eval-sexp-fu-flash-face 'success-face
    eval-sexp-fu-flash-duration 0.3
    eval-sexp-fu-flash-error-face 'error-face
@@ -153,16 +154,18 @@
   (define-key cider-mode-map      (kbd "C-c F") (util/all-buffers-saved (util-clojure/cider-cmd "(do (user/system-restart!) (user/fig-init))")))
   (define-key cider-repl-mode-map (kbd "C-c F") (util/all-buffers-saved (util-clojure/cider-cmd "(do (user/system-restart!) (user/fig-init))")))
 
-  ;; TODO: Keybindings
+  ;; TODO: Keybindings, map
   :bind
-  (("C-c C-d" . cider-doc)
-   ("C-c C-r" . cider-eval-region)
+  (("C-c cc" . cider-connect)
+
+   :map cider-mode-map
+   ("C-c C-d" . cider-doc)
    ("C-c M-o" . cider-repl-clear-buffer))
 
   :diminish
   cider-mode
 
   ;; Add more
- )
+  )
 
 (provide 'setup__cider)

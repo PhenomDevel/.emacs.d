@@ -1,21 +1,21 @@
 ;; Provides helpful features to work with clojure
 
 (use-package
- clojure-mode
+  clojure-mode
 
- :ensure
- t
+  :ensure
+  t
 
- :requires
- (clojure-mode-extra-font-locking)
+  :requires
+  (clojure-mode-extra-font-locking)
 
- :mode
- (("\\.edn\\'" . clojure-mode)
-  ("\\.boot\\'" . clojure-mode)
-  ("\\.clj\\'" . clojure-mode)
-  ("\\.cljs\\'" . clojure-mode))
+  :mode
+  (("\\.edn\\'" . clojure-mode)
+   ("\\.boot\\'" . clojure-mode)
+   ("\\.clj\\'" . clojure-mode)
+   ("\\.cljs\\'" . clojure-mode))
 
- )
+  )
 
 
 (provide 'setup__clojure-mode)

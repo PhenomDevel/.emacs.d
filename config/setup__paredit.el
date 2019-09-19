@@ -18,7 +18,22 @@
 
   ;; TODO: Keybindings
   :bind
-  (("C-j" . paredit-backward))
+  (:map paredit-mode-map
+	("C-<S-s>" . paredit-forward-slurp-sexp)
+	("C-B" . paredit-forward-barf-sexp)
+	
+	;; paredit-backward-slurp-sexp
+	;; paredit-backward-barf-sexp
+
+	;; paredit-forward
+	;; paredit-backward
+	;; paredit-forward-down
+	;; paredit-backward-up
+	;; paredit-backward-down
+	;; paredit-forward-up
+
+	;; paredit-split-sexp
+	)
   
   ;; Add more
 
