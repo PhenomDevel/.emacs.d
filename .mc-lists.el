@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
 	paredit-forward-delete
+	paredit-raise-sexp
 	))
 
 (setq mc/cmds-to-run-once
