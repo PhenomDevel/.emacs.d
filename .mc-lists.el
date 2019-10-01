@@ -4,9 +4,11 @@
 (setq mc/cmds-to-run-for-all
       '(
 	paredit-forward-delete
+	paredit-kill
 	paredit-raise-sexp
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	paredit-open-round
 	))

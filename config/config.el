@@ -46,6 +46,8 @@
 (require 'setup__which-key)
 (require 'setup__rainbow-mode)
 (require 'setup__company)
+(require 'setup__org-mode)
+
 ;; (require 'setup__company-quickhelp)
 
 ;; =============================================================================

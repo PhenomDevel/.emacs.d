@@ -60,7 +60,10 @@
    eval-sexp-fu-flash-duration 0.3
    eval-sexp-fu-flash-error-face 'error-face
    eval-sexp-fu-flash-error-duration 0.5
-   cider-error-highlight-face 'error-face)
+   cider-error-highlight-face 'error-face
+   
+   cider-prompt-for-symbol nil
+   cider-special-mode-truncate-lines nil)
 
   (set-face-attribute 'cider-result-overlay-face nil :foreground "#66FF00" :weight 'bold :background nil)
   (set-face-attribute 'cider-fringe-good-face nil :foreground "#00CC53")
