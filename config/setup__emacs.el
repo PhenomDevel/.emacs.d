@@ -47,6 +47,9 @@
       auto-save-default nil
       make-backup-files nil)
 
+(setq-default truncate-lines t)
+(custom-set-variables '(truncate-lines t))
+
 (setq initial-major-mode 'emacs-lisp-mode)
 
 (dashboard-setup-startup-hook)

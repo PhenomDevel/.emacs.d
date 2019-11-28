@@ -3,9 +3,12 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	paredit-backslash
+	paredit-doublequote
 	paredit-forward-delete
 	paredit-kill
 	paredit-raise-sexp
+	paredit-semicolon
 	))
 
 (setq mc/cmds-to-run-once

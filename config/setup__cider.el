@@ -29,6 +29,21 @@
       (interactive)
       (cider-interactive-eval cmd))))
 
+(defun cider-eval-dwim ()
+  (interactive)
+  (save-excursion
+    (let ((cursor nil)
+	  (sexp nil))
+      (ignore-errors
+	(while (not (string-match-p "^(comment.*" (or sexp "")))
+	  (setq cursor (point))
+	  (paredit-backward-up)
+	  (setq sexp (cider-sexp-at-point))))
+      (goto-char cursor)
+      (unless (cider-sexp-at-point)
+	(paredit-backward-up))
+      (cider-eval-sexp-at-point))))
+
 (use-package
   cider
 
@@ -160,10 +175,13 @@
   ;; TODO: Keybindings, map
   :bind
   (("C-c cc" . cider-connect)
-
+   
    :map cider-mode-map
    ("C-c C-d" . cider-doc)
-   ("C-c M-o" . cider-repl-clear-buffer))
+   
+   :map cider-repl-mode-map
+   ("C-c cb" . cider-find-and-clear-repl-output)
+   )
 
   :diminish
   cider-mode

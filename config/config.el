@@ -15,7 +15,7 @@
 ;; NOTE: Packages which should always be loaded
 (defvar default-packages
   '(use-package
-     diminish   
+     diminish
      dashboard
 
      ;; ,,,
@@ -47,15 +47,7 @@
 (require 'setup__rainbow-mode)
 (require 'setup__company)
 (require 'setup__org-mode)
-
-;; (require 'setup__company-quickhelp)
-
-;; =============================================================================
-;; Appeareance
-
-(require 'setup__emacs)
-(require 'setup__theme)
-(require 'setup__minor-mode-line)
+(require 'setup__simple)
 
 
 ;; =============================================================================
@@ -66,6 +58,7 @@
 (require 'setup__magit)
 (require 'setup__magit-popup)
 (require 'setup__linum)
+
 
 ;; =============================================================================
 ;; Programming
@@ -83,6 +76,13 @@
 (require 'setup__markdown-mode)
 (require 'setup__lua-mode)
 
+
+;; =============================================================================
+;; Appeareance
+
+(require 'setup__emacs)
+(require 'setup__theme)
+(require 'setup__minor-mode-line)
 
 ;; TODO:
 ;; - smartrep
