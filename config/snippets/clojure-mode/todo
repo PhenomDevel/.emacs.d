@@ -1,0 +1,5 @@
+# name: todo
+# key: todo
+# --
+;; TODO: ${1:ticket-nr}
+;; ${2:note}

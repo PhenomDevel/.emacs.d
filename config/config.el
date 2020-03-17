@@ -75,7 +75,7 @@
 (require 'setup__sass-mode)
 (require 'setup__markdown-mode)
 (require 'setup__lua-mode)
-
+(require 'setup__yaml-mode)
 
 ;; =============================================================================
 ;; Appeareance

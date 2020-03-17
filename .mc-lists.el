@@ -3,12 +3,19 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+	cider-load-buffer
+	haml-electric-backspace
+	indent-for-tab-command
 	paredit-backslash
 	paredit-doublequote
 	paredit-forward-delete
 	paredit-kill
+	paredit-open-curly
+	paredit-open-square
 	paredit-raise-sexp
 	paredit-semicolon
+	swiper
+	xterm-paste
 	))
 
 (setq mc/cmds-to-run-once

@@ -22,11 +22,14 @@
   (setq scroll-conservatively n)
   (setq scroll-margin n))
 
+(set-face-foreground 'font-lock-warning-face "#FFFF00")
+
 ;; Show some Words with custom style
 (add-hook 'prog-mode-hook
           (lambda ()
             (font-lock-add-keywords nil '(("\\<\\(HACK\\|NOTE\\|FIXME\\|TODO\\|BUG\\|comment\\|INFO\\)"
                                            1 font-lock-warning-face t)))))
+
 
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
