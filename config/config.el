@@ -1,9 +1,10 @@
 (require 'package)
 
 (setq package-archives
-      '(("melpa" . "http://melpa.org/packages/")
+      '(
+	("melpa" . "http://melpa.org/packages/")
 	("gnu" . "http://elpa.gnu.org/packages/")
-        ("smelpa" . "https://stable.melpa.org/packages/")))
+        ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
 (setq package-enable-at-startup nil)
 
@@ -16,7 +17,7 @@
 (defvar default-packages
   '(use-package
      diminish
-     dashboard
+     ;; dashboard
 
      ;; ,,,
      ))
@@ -48,6 +49,7 @@
 (require 'setup__company)
 (require 'setup__org-mode)
 (require 'setup__simple)
+(require 'setup__treemacs)
 
 
 ;; =============================================================================
@@ -76,6 +78,7 @@
 (require 'setup__markdown-mode)
 (require 'setup__lua-mode)
 (require 'setup__yaml-mode)
+(require 'setup__flycheck)
 
 ;; =============================================================================
 ;; Appeareance

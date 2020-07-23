@@ -12,6 +12,9 @@
   :bind
   (("C-c rm" . rainbow-mode))
 
+  :hook
+  ((sass-mode) . rainbow-mode)
+
   ;; Add more
   )
 

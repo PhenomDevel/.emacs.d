@@ -30,7 +30,6 @@
             (font-lock-add-keywords nil '(("\\<\\(HACK\\|NOTE\\|FIXME\\|TODO\\|BUG\\|comment\\|INFO\\)"
                                            1 font-lock-warning-face t)))))
 
-
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -55,6 +54,6 @@
 
 (setq initial-major-mode 'emacs-lisp-mode)
 
-(dashboard-setup-startup-hook)
+;; (dashboard-setup-startup-hook)
 
 (provide 'setup__emacs)

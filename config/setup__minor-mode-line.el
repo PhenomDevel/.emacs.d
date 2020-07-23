@@ -6,10 +6,11 @@
 (setq-default
  mode-line-format
  '((:propertize "%4l :" face mode-line-position-face)
+
    (:eval (propertize "%3c  " 'face
-                      (if (>= (current-column) 80)
-                          'mode-line-80col-face
-                        'mode-line-position-face)))
+		      (if (>= (current-column) 80)
+			  'mode-line-80col-face
+			'mode-line-position-face)))
 
    (:propertize (:eval (shorten-directory default-directory 30))
                 face mode-line-folder-face)
@@ -24,16 +25,9 @@
           (t (propertize "%b"
                          'face 'mode-line-filename-face))))
 
-
-                                        ; narrow [default -- keep?]
-   " %n "
-
-
-
-                                        ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
    (vc-mode vc-mode)
-   "  %["
-   (:propertize mode-name
+   " %["
+   (:propertize "%m"
                 face mode-line-mode-face)
    "%] ["
    (:eval (propertize (format-mode-line minor-mode-alist)
@@ -41,10 +35,7 @@
    (:propertize mode-line-process
                 face mode-line-process-face)
    (global-mode-string global-mode-string)
-   "]    "))
-
-
-
+   " ]    "))
 
 
 ;; Helper function
@@ -91,9 +82,9 @@
 
 (set-face-attribute 'mode-line-modified-face nil
                     :inherit 'mode-line-face
-                    :foreground "#c82829"
+                    :foreground "#d10700"
                     :background "#ffffff"
-                    :box '(:line-width 1 :color "#c82829"))
+                    :box '(:line-width 1 :color "#d10700"))
 
 (set-face-attribute 'mode-line-folder-face nil
                     :inherit 'mode-line-face
@@ -101,17 +92,17 @@
 
 (set-face-attribute 'mode-line-filename-face nil
                     :inherit 'mode-line-face
-                    :foreground "green"
+                    :foreground "#3ce000"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-filename-modified-face nil
                     :inherit 'mode-line-face
-                    :foreground "yellow"
+                    :foreground "#f5da42"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-filename-read-only-face nil
                     :inherit 'mode-line-face
-                    :foreground "red"
+                    :foreground "#d10700"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-position-face nil
@@ -130,11 +121,13 @@
 
 (set-face-attribute 'mode-line-process-face nil
                     :inherit 'mode-line-face
-                    :foreground "#718c00")
+                    :foreground "#3ce000")
 
 (set-face-attribute 'mode-line-80col-face nil
                     :inherit 'mode-line-position-face
-                    :foreground "black" :background "#eab700")
+                    :foreground "#f5da42"
+		    :background "black"
+		    )
 
 
 

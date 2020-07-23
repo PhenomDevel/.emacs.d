@@ -49,8 +49,10 @@
 
   :ensure t
 
+  :pin melpa-stable
+
   :after clojure-mode
-  
+
   :commands
   (cider-connect)
 
@@ -60,12 +62,12 @@
    cider-use-overlays t
    cider-overlays-use-font-lock t
    eldoc-echo-area-use-multiline-p t
-   cider-repl-pop-to-buffer-on-connect t
+   ;; cider-repl-pop-to-buffer-on-connect t
    cider-show-error-buffer t
    cider-repl-history-file "~/.emacs.d/cider-history"
    cider-repl-wrap-history t
    cider-font-lock-dynamically '(macro core function var)
-   cider-prompt-for-project-on-connect nil
+   ;; cider-prompt-for-project-on-connect nil
    cider-repl-use-pretty-printing t
    cider-prompt-save-file-on-load nil
    cider-repl-use-clojure-font-lock t
@@ -76,9 +78,14 @@
    eval-sexp-fu-flash-error-face 'error-face
    eval-sexp-fu-flash-error-duration 0.5
    cider-error-highlight-face 'error-face
-   
+
    cider-prompt-for-symbol nil
-   cider-special-mode-truncate-lines nil)
+   cider-special-mode-truncate-lines nil
+
+   ;; Shadow-CLJS Problem mit autocomplete fixen
+   cider-enhanced-cljs-completion-p nil
+
+   )
 
   (set-face-attribute 'cider-result-overlay-face nil :foreground "#66FF00" :weight 'bold :background nil)
   (set-face-attribute 'cider-fringe-good-face nil :foreground "#00CC53")
@@ -175,18 +182,21 @@
   ;; TODO: Keybindings, map
   :bind
   (("C-c cc" . cider-connect)
-   
+
    :map cider-mode-map
    ("C-c C-d" . cider-doc)
-   
+
    :map cider-repl-mode-map
-   ("C-c cb" . cider-find-and-clear-repl-output)
+   (("C-c cb" . cider-find-and-clear-repl-output)
+    ("M-RET" . cider-repl-newline-and-indent)
+    ("RET" . cider-repl-return))
+
    )
 
   :diminish
   cider-mode
 
-  ;; Add more
+  ;; Add MORE
   )
 
 (provide 'setup__cider)

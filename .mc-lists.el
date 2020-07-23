@@ -6,6 +6,10 @@
 	cider-load-buffer
 	haml-electric-backspace
 	indent-for-tab-command
+	org-delete-char
+	org-kill-line
+	org-self-insert-command
+	org-yank
 	paredit-backslash
 	paredit-doublequote
 	paredit-forward-delete
@@ -21,4 +25,5 @@
 (setq mc/cmds-to-run-once
       '(
 	paredit-open-round
+	suspend-frame
 	))

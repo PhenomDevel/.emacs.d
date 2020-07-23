@@ -1,21 +1,27 @@
-;; Provides helpful features to work with clojure
-
 (use-package
-  clojure-mode
+ clojure-mode
 
-  :ensure
-  t
+ :ensure
+ t
 
-  :requires
-  (clojure-mode-extra-font-locking)
+ :after flycheck
 
-  :mode
-  (("\\.edn\\'" . clojure-mode)
-   ("\\.boot\\'" . clojure-mode)
-   ("\\.clj\\'" . clojure-mode)
-   ("\\.cljs\\'" . clojure-mode))
+ :requires
+ (clojure-mode-extra-font-locking)
 
-  )
+ :mode
+ (("\\.edn\\'" . clojure-mode)
+  ("\\.boot\\'" . clojure-mode)
+  ("\\.clj\\'" . clojure-mode)
+  ("\\.cljs\\'" . clojurescript-mode))
+
+ :config
+ (require 'flycheck-clj-kondo)
+
+ :init
+ (add-hook 'clojure-mode-hook 'flycheck-mode)
+
+ )
 
 
 (provide 'setup__clojure-mode)

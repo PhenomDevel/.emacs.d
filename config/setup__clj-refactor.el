@@ -7,10 +7,13 @@
   t
 
   :requires
-  (clojure-mode)
+  (clojure-mode cider-repl-mode)
 
   :config
-  (cljr-add-keybindings-with-prefix "C-c C-r")
+  (setq
+   ;; CLojure Refactor warning ausschalten
+   cljr-suppress-middleware-warnings t
+   cljr-add-keybindings-with-prefix "C-c C-r")
   )
 
 (provide 'setup__clj-refactor)

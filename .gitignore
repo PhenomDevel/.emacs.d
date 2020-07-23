@@ -24,3 +24,4 @@ themes/*
 url/*
 *~
 /recentf
+.cache
