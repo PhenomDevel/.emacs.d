@@ -17,9 +17,7 @@
 (defvar default-packages
   '(use-package
      diminish
-     ;; dashboard
 
-     ;; ,,,
      ))
 
 (dolist (p default-packages)

@@ -5,16 +5,32 @@
 ;; Mode line setup
 (setq-default
  mode-line-format
- '((:propertize "%4l :" face mode-line-position-face)
+ '(;; Show marker for flycheck status
+   (:eval
+    (cond
+     ((flycheck-has-current-errors-p 'error)
+      (propertize " \u21af "
+		  'face 'mode-line-error-face))
+     ((flycheck-has-current-errors-p 'warning)
+      (propertize " ! "
+		  'face 'mode-line-warning-face))
+     ((flycheck-has-current-errors-p 'info)
+      (propertize " I "
+		  'face 'mode-line-info-face))))
+
+   (:propertize "%4l :" face mode-line-position-face)
 
    (:eval (propertize "%3c  " 'face
 		      (if (>= (current-column) 80)
 			  'mode-line-80col-face
 			'mode-line-position-face)))
 
+
+   ;; Sho shortened path
    (:propertize (:eval (shorten-directory default-directory 30))
                 face mode-line-folder-face)
 
+   ;; Show colored filename based on file status
    (:eval
     (cond (buffer-read-only
            (propertize "%b"
@@ -25,11 +41,16 @@
           (t (propertize "%b"
                          'face 'mode-line-filename-face))))
 
+   ;; Show git status
    (vc-mode vc-mode)
    " %["
+
+   ;; show major mode
    (:propertize "%m"
                 face mode-line-mode-face)
    "%] ["
+
+   ;; show minor modes
    (:eval (propertize (format-mode-line minor-mode-alist)
                       'face 'mode-line-minor-mode-face))
    (:propertize mode-line-process
@@ -64,6 +85,10 @@
 (make-face 'mode-line-minor-mode-face)
 (make-face 'mode-line-process-face)
 (make-face 'mode-line-80col-face)
+(make-face 'mode-line-error-face)
+(make-face 'mode-line-warning-face)
+(make-face 'mode-line-info-face)
+
 
 (set-face-attribute 'mode-line nil
                     :foreground "gray80" :background "#222"
@@ -128,6 +153,21 @@
                     :foreground "#f5da42"
 		    :background "black"
 		    )
+
+(set-face-attribute 'mode-line-error-face nil
+		    :inherit 'mode-line-face
+                    :foreground "white"
+		    :background "#d10700")
+
+(set-face-attribute 'mode-line-warning-face nil
+		    :inherit 'mode-line-face
+                    :foreground "black"
+		    :background "#f5da42")
+
+(set-face-attribute 'mode-line-info-face nil
+		    :inherit 'mode-line-face
+		    :foreground "black"
+		    :background "#3ce000")
 
 
 

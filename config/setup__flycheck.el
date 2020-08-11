@@ -12,7 +12,8 @@
    :foreground "#f5da42")
   (set-face-attribute
    'flycheck-error nil
-   :foreground "#d10700")
+   :foreground "#FF0000")
+
   (setq flycheck-highlighting-mode 'sexps)
   (setq flycheck-check-syntax-automatically '(save)) ;; Only check on save so it does not bother
 
