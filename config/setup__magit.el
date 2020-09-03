@@ -6,14 +6,16 @@
   :ensure t
 
   :defer t
-  
+
   :commands
   (magit-status magit-log-all magit-blame-addition)
 
   :bind
   (("C-c ms" . magit-status)
    ("C-c ml" . magit-log-all)
-   ("C-c mb" . magit-blame-addition))
+   ("C-c mb" . magit-blame-addition)
+   ("C-c mp" . magit-push)
+   ("C-c mP" . magit-pull))
 
   :config
   (custom-set-faces
