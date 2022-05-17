@@ -76,7 +76,9 @@
 (require 'setup__markdown-mode)
 (require 'setup__lua-mode)
 (require 'setup__yaml-mode)
+(require 'setup__scss-mode)
 (require 'setup__flycheck)
+
 
 ;; =============================================================================
 ;; Appeareance

@@ -1,5 +1,4 @@
-(use-package
-  flycheck
+(use-package flycheck
 
   :ensure t
 
@@ -14,6 +13,11 @@
    'flycheck-error nil
    :foreground "#FF0000")
 
+  (setq flycheck-disabled-checkers
+	'(clojure-cider-eastwood
+	  clojure-cider-kibit
+	  clojure-cider-typed))
+
   (setq flycheck-highlighting-mode 'sexps)
   (setq flycheck-check-syntax-automatically '(save)) ;; Only check on save so it does not bother
 
@@ -21,26 +25,25 @@
   (:map flycheck-mode-map
 	("C-f C-c n" . flycheck-next-error)
 	("C-f C-c p" . flycheck-previous-error)
-	("C-f C-c l e" . flycheck-list-errors)
-
-	)
+	("C-f C-c l e" . flycheck-list-errors))
 
   :hook
   (clojure-mode . flycheck-mode)
+  (lua-mode . flycheck-mode)
+
   )
 
 (use-package flycheck-clojure
   :ensure
   t
 
-  :after
-  flycheck
+  :defer
+  t
 
-  :init
+  :commands
   (flycheck-clojure-setup))
 
-(use-package
-  flycheck-clj-kondo
+(use-package flycheck-clj-kondo
 
   :ensure
   t
@@ -48,8 +51,7 @@
   :after
   flycheck)
 
-(use-package
-  flycheck-popup-tip
+(use-package flycheck-popup-tip
 
   :defer
   t

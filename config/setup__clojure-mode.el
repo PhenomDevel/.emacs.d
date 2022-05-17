@@ -1,27 +1,27 @@
 (use-package
- clojure-mode
+  clojure-mode
 
- :ensure
- t
+  :ensure
+  t
 
- :after flycheck
+  :after flycheck
 
- :requires
- (clojure-mode-extra-font-locking)
+  :requires
+  (clojure-mode-extra-font-locking)
 
- :mode
- (("\\.edn\\'" . clojure-mode)
-  ("\\.boot\\'" . clojure-mode)
-  ("\\.clj\\'" . clojure-mode)
-  ("\\.cljs\\'" . clojurescript-mode))
+  :mode
+  (("\\.edn\\'" . clojure-mode)
+   ("\\.boot\\'" . clojure-mode)
+   ("\\.clj\\'" . clojure-mode)
+   ("\\.cljs\\'" . clojurescript-mode))
 
- :config
- (require 'flycheck-clj-kondo)
+  :config
+  (require 'flycheck-clj-kondo)
 
- :init
- (add-hook 'clojure-mode-hook 'flycheck-mode)
+  :init
+  (add-hook 'clojure-mode-hook 'flycheck-mode)
 
- )
+  )
 
 
 (provide 'setup__clojure-mode)

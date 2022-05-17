@@ -85,7 +85,8 @@
    ;; Shadow-CLJS Problem mit autocomplete fixen
    cider-enhanced-cljs-completion-p nil
 
-   )
+   nrepl-log-messages t)
+  (flycheck-clojure-setup)
 
   (set-face-attribute 'cider-result-overlay-face nil :foreground "#66FF00" :weight 'bold :background nil)
   (set-face-attribute 'cider-fringe-good-face nil :foreground "#00CC53")
@@ -160,7 +161,9 @@
     (reg-sub 'defun)
     (reg-event-fx 'defun)
     (reg-event-db 'defun)
+    (reg-cofx 'defun)
     (reg-fx 'defun)
+
     )
 
   ;; Doctronic specific component keybindings
@@ -187,7 +190,7 @@
    ("C-c C-d" . cider-doc)
 
    :map cider-repl-mode-map
-   (("C-c cb" . cider-find-and-clear-repl-output)
+   (("C-c cb" . cider-repl-clear-buffer)
     ("M-RET" . cider-repl-newline-and-indent)
     ("RET" . cider-repl-return))
 

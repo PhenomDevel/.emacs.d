@@ -2,13 +2,12 @@
   sass-mode
 
   :ensure t
-  
+
   :defer true
 
   :mode
-  (("\\.scss\\'" . sass-mode)
-   ("\\.sass\\'" . sass-mode))
-  
+  (("\\.sass\\'" . sass-mode))
+
   ;; Add more
   )
 
