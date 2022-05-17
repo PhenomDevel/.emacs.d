@@ -25,3 +25,5 @@ url/*
 *~
 /recentf
 .cache
+elpa_backup
+.DS_Store
