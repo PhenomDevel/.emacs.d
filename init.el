@@ -17,3 +17,6 @@
  '(magit-diff-added-highlight ((t (:background "#007700" :foreground "#FFFFFF"))))
  '(magit-diff-removed ((t (:background "#770000" :foreground "#FFFFFF"))))
  '(magit-diff-removed-highlight ((t (:background "#770000" :foreground "#FFFFFF")))))
+(put 'narrow-to-region 'disabled nil)
+(put 'narrow-to-page 'disabled nil)
+(put 'set-goal-column 'disabled nil)

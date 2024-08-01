@@ -54,23 +54,10 @@
 
 (setq initial-major-mode 'emacs-lisp-mode)
 
-;; (dashboard-setup-startup-hook)
-
-
-(cond
- ((string-equal system-type "windows-nt")
-  (progn
-    (set-face-attribute 'default nil
-			:family "Cascadia Mono"
-			:height 110
-			:weight 'normal
-			:width 'normal)))
- ((string-equal system-type "darwin") ;  macOS
-  ;; (progn ,,,)
-  )
- ((string-equal system-type "gnu/linux")
-  ;;(progn ,,,)
-  ))
-
+(set-face-attribute 'default nil
+		    :family "Cascadia Mono"
+		    :height 110
+		    :weight 'normal
+		    :width 'normal)
 
 (provide 'setup__emacs)

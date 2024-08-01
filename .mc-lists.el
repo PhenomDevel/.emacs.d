@@ -4,17 +4,22 @@
 (setq mc/cmds-to-run-for-all
       '(
 	cider-load-buffer
+	end-of-buffer
 	haml-electric-backspace
+	ido-find-file
 	indent-for-tab-command
 	org-delete-char
 	org-kill-line
 	org-self-insert-command
 	org-yank
+	paredit-RET
 	paredit-backslash
+	paredit-delete-char
 	paredit-doublequote
 	paredit-forward-delete
 	paredit-kill
 	paredit-open-curly
+	paredit-open-round
 	paredit-open-square
 	paredit-raise-sexp
 	paredit-semicolon
@@ -24,6 +29,5 @@
 
 (setq mc/cmds-to-run-once
       '(
-	paredit-open-round
 	suspend-frame
 	))

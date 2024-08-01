@@ -8,7 +8,7 @@
 ;;; Code:
 (use-package
   smex
-  
+
   :ensure t
 
   :config

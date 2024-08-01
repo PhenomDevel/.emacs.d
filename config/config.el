@@ -42,12 +42,12 @@
 (require 'setup__counsel)
 (require 'setup__smex)
 (require 'setup__fullframe)
-(require 'setup__which-key)
+;; (require 'setup__which-key)
 (require 'setup__rainbow-mode)
 (require 'setup__company)
 (require 'setup__org-mode)
 (require 'setup__simple)
-(require 'setup__treemacs)
+;; (require 'setup__treemacs)
 
 
 ;; =============================================================================
@@ -57,7 +57,7 @@
 (require 'setup__yasnippet)
 (require 'setup__magit)
 (require 'setup__magit-popup)
-(require 'setup__linum)
+;; (require 'setup__linum)
 
 
 ;; =============================================================================
@@ -86,9 +86,5 @@
 (require 'setup__emacs)
 (require 'setup__theme)
 (require 'setup__minor-mode-line)
-
-;; TODO:
-;; - smartrep
-;; - winner ?
 
 (provide 'config)
