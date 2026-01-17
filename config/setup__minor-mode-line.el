@@ -6,6 +6,7 @@
 (setq-default
  mode-line-format
  '(;; Show marker for flycheck status
+
    (:eval
     (cond
      ((flycheck-has-current-errors-p 'error)
@@ -44,6 +45,9 @@
    ;; Show git status
    (vc-mode vc-mode)
    " %["
+
+   (:propertize "%z"
+                face mode-line-mode-face)
 
    ;; show major mode
    (:propertize "%m"

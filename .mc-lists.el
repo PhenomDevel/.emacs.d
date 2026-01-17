@@ -25,6 +25,8 @@
 	paredit-semicolon
 	swiper
 	xterm-paste
+	yaml-electric-backspace
+	yaml-electric-dash-and-dot
 	))
 
 (setq mc/cmds-to-run-once

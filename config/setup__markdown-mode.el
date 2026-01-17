@@ -1,16 +1,8 @@
-(use-package
-  markdown-mode
-
+(use-package markdown-mode
   :ensure t
-
-  :defer t
-
-  :mode
-  (("\\.ml\\'" . markdown-mode)
-   ("\\.markdown\\'" . markdown-mode))
-  
-  ;; Add more
-  
-  )
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "pandoc")
+  :bind (:map markdown-mode-map
+         ("C-c C-e" . markdown-do)))
 
 (provide 'setup__markdown-mode)

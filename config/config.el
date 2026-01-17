@@ -2,9 +2,10 @@
 
 (setq package-archives
       '(
+	("melpa-stable" . "https://stable.melpa.org/packages/")
 	("melpa" . "http://melpa.org/packages/")
 	("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")))
+        ))
 
 (setq package-enable-at-startup nil)
 
@@ -48,21 +49,23 @@
 (require 'setup__org-mode)
 (require 'setup__simple)
 ;; (require 'setup__treemacs)
-
-
-;; =============================================================================
-;; Project Helper
-
+;;
+;;
+;;;; =============================================================================
+;;;; Project Helper
+;;
 (require 'setup__projectile)
 (require 'setup__yasnippet)
 (require 'setup__magit)
 (require 'setup__magit-popup)
+(require 'setup__smerge)
 ;; (require 'setup__linum)
-
-
-;; =============================================================================
-;; Programming
-
+;;
+;;
+;;;; =============================================================================
+;;;; Programming
+;;
+(require 'setup__flycheck)
 (require 'setup__highlight-symbol)
 (require 'setup__rainbow-delimiters)
 (require 'setup__cider)
@@ -75,16 +78,22 @@
 (require 'setup__sass-mode)
 (require 'setup__markdown-mode)
 (require 'setup__lua-mode)
+(require 'setup__groovy-mode)
 (require 'setup__yaml-mode)
 (require 'setup__scss-mode)
-(require 'setup__flycheck)
-
-
-;; =============================================================================
-;; Appeareance
-
+;;
+;; (require 'setup__lsp)
+;;
+;;
+;;;; =============================================================================
+;;;; Appeareance
+;;
 (require 'setup__emacs)
 (require 'setup__theme)
 (require 'setup__minor-mode-line)
-
+;;
 (provide 'config)
+;;
+;;(setq debug-on-error t)
+
+;;
