@@ -47,16 +47,20 @@
 (use-package
   cider
 
-  :ensure t
+  :ensure
+  t
 
-  :pin melpa-stable
+  :pin
+  melpa-stable
 
-  :after clojure-mode
+  :after
+  clojure-mode
 
   :commands
   (cider-connect)
 
   :config
+  ;; (add-hook 'clojure-mode-hook #'flycheck-clojure-setup)
   (setq
    cider-repl-result-prefix ";=> "
    cider-use-overlays t
@@ -86,7 +90,6 @@
    cider-enhanced-cljs-completion-p nil
 
    nrepl-log-messages t)
-  (flycheck-clojure-setup)
 
   (set-face-attribute 'cider-result-overlay-face nil :foreground "#CCFFCC" :weight 'bold :background nil)
   (set-face-attribute 'cider-fringe-good-face nil :foreground "#00CC53")

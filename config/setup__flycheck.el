@@ -25,7 +25,7 @@
 
   :hook
   (clojure-mode . flycheck-mode)
-  (lua-mode . flycheck-mode)
+  ;; (lua-mode . flycheck-mode)
   )
 
 
