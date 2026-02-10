@@ -1,10 +1,15 @@
 (use-package lsp-mode
-  :commands lsp-install-server
-  :hook (lsp-mode . lsp-diagnostics-mode)
+  :ensure
+  t
+
+  :hook
+  (lsp-mode . lsp-diagnostics-mode)
   (lsp-mode . lsp-enable-which-key-integration)
   (lsp-mode . lsp-completion-mode)
   (prog-mode . lsp-deferred)
-  :custom (lsp-keymap-prefix "C-c l")
+
+  :custom
+  (lsp-keymap-prefix "C-c l")
   (lsp-completion-provider :capf)
   (lsp-log-io nil)
   (lsp-keep-workspace-alive nil)
@@ -40,9 +45,15 @@
   (lsp-warn-no-matched-clients nil))
 
 (use-package lsp-ui
-  :after lsp-mode
-  :commands (lsp-ui-doc-show lsp-ui-doc-glance)
-  :custom (lsp-ui-sideline-show-hover nil)
+  :ensure
+  t
+
+  :after
+  lsp-mode
+
+  :custom
+  (lsp-ui-sideline-enable nil)
+  (lsp-ui-sideline-show-hover nil)
   (lsp-ui-sideline-ignore-duplicate t)
   (lsp-ui-sideline-show-code-actions nil)
   (lsp-ui-sideline-show-diagnostics nil)
@@ -55,8 +66,11 @@
   (lsp-ui-doc-position 'at-point))
 
 (use-package flymake
-  :hook ((prog-mode text-mode) . flymake-mode)
-  :custom (flymake-show-diagnostics-at-end-of-line 'short)
+  :hook
+  ((prog-mode text-mode) . flymake-mode)
+
+  :custom
+  (flymake-show-diagnostics-at-end-of-line 'short)
   (flymake-fringe-indicator-position 'right-fringe))
 
 (provide 'setup__lsp)

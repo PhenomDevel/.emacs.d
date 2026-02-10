@@ -12,7 +12,8 @@
   (setq projectile-completion-system 'ido)
   (setq projectile-require-project-root nil)
   (setq projectile-mode-line-lighter "P")
-  (setq projectile-indexing-method 'native)
+  (setq projectile-indexing-method 'alien)
+  (setq projectile-enable-caching nil)
 
   ;; TODO: Keybindings
   :bind
