@@ -18,6 +18,7 @@
    ("C-c mP" . magit-pull))
 
   :config
+  (setq magit-cygwin-mount-points nil)
   (custom-set-faces
    '(magit-diff-added ((t (:background "#007700" :foreground "#FFFFFF"))))
    '(magit-diff-added-highlight ((t (:background "#007700" :foreground "#FFFFFF"))))

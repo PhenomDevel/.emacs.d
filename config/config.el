@@ -56,8 +56,11 @@
 ;;
 (require 'setup__projectile)
 (require 'setup__yasnippet)
-(require 'setup__magit)
-(require 'setup__magit-popup)
+
+(unless (eq system-type 'windows-nt)
+  (require 'setup__magit)
+  (require 'setup__magit-popup))
+
 (require 'setup__smerge)
 ;; (require 'setup__linum)
 ;;

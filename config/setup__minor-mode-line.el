@@ -7,17 +7,17 @@
  mode-line-format
  '(;; Show marker for flycheck status
 
-   (:eval
-    (cond
-     ((flycheck-has-current-errors-p 'error)
-      (propertize " \u21af "
-		  'face 'mode-line-error-face))
-     ((flycheck-has-current-errors-p 'warning)
-      (propertize " ! "
-		  'face 'mode-line-warning-face))
-     ((flycheck-has-current-errors-p 'info)
-      (propertize " I "
-		  'face 'mode-line-info-face))))
+(:eval
+ (when (and (bound-and-true-p flycheck-mode)
+            (fboundp 'flycheck-has-current-errors-p))
+   (cond
+    ((flycheck-has-current-errors-p 'error)
+     (propertize " ↯ " 'face 'mode-line-error-face))
+    ((flycheck-has-current-errors-p 'warning)
+     (propertize " ! " 'face 'mode-line-warning-face))
+    ((flycheck-has-current-errors-p 'info)
+     (propertize " I " 'face 'mode-line-info-face))
+    (t ""))))
 
    (:propertize "%4l :" face mode-line-position-face)
 
