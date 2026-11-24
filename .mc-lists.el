@@ -8,6 +8,7 @@
 	haml-electric-backspace
 	ido-find-file
 	indent-for-tab-command
+	kill-sentence
 	org-delete-char
 	org-kill-line
 	org-self-insert-command

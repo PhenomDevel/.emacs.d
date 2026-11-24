@@ -1,11 +1,8 @@
 (require 'package)
 
-(setq package-archives
-      '(
-	("melpa-stable" . "https://stable.melpa.org/packages/")
-	("melpa" . "http://melpa.org/packages/")
-	("gnu" . "http://elpa.gnu.org/packages/")
-        ))
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (setq package-enable-at-startup nil)
 
@@ -84,8 +81,9 @@
 (require 'setup__groovy-mode)
 (require 'setup__yaml-mode)
 (require 'setup__scss-mode)
+(require 'setup__typescript)
 ;;
-;; (require 'setup__lsp)
+(require 'setup__lsp)
 ;;
 ;;
 ;;;; =============================================================================
@@ -94,6 +92,13 @@
 (require 'setup__emacs)
 (require 'setup__theme)
 (require 'setup__minor-mode-line)
+
+;; =============================================================================
+;; AI
+
+(require 'setup__agent-shell)
+
+
 ;;
 (provide 'config)
 ;;

@@ -83,7 +83,7 @@
    eval-sexp-fu-flash-error-duration 0.5
    cider-error-highlight-face 'error-face
 
-   cider-prompt-for-symbol nil
+   cider-prompt-for-symbol t
    cider-special-mode-truncate-lines nil
 
    ;; Shadow-CLJS Problem mit autocomplete fixen
@@ -166,6 +166,10 @@
    (reg-event-db 'defun)
    (reg-cofx 'defun)
    (reg-fx 'defun)
+
+   ;; uix
+   (defui 'defun)
+   ($ 'defun)
 
    )
 

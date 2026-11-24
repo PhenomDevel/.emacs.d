@@ -27,3 +27,5 @@ url/*
 .cache
 elpa_backup
 .DS_Store
+.lsp-session-v1
+/.agent-shell/
