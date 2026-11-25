@@ -1,27 +1,10 @@
+;; -*- lexical-binding: t -*-
+;; Packages are activated before init.el (`package-enable-at-startup');
+;; use-package :ensure installs missing ones and refreshes archives on demand.
 (require 'package)
-
-
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-(setq package-enable-at-startup nil)
-
-(package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; NOTE: Packages which should always be loaded
-(defvar default-packages
-  '(use-package
-     diminish
-
-     ))
-
-(dolist (p default-packages)
-  (unless (package-installed-p p)
-    (package-refresh-contents)
-    (package-install p)))
 
 
 ;; =============================================================================
@@ -40,7 +23,7 @@
 (require 'setup__counsel)
 (require 'setup__smex)
 (require 'setup__fullframe)
-;; (require 'setup__which-key)
+(require 'setup__which-key)
 (require 'setup__rainbow-mode)
 (require 'setup__company)
 (require 'setup__org-mode)
@@ -59,7 +42,6 @@
   (require 'setup__magit-popup))
 
 (require 'setup__smerge)
-;; (require 'setup__linum)
 ;;
 ;;
 ;;;; =============================================================================

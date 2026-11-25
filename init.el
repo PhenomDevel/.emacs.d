@@ -1,21 +1,17 @@
-(add-to-list 'load-path "~/.emacs.d/config")
+;;; init.el -*- lexical-binding: t -*-
+
+(add-to-list 'load-path (expand-file-name "config" user-emacs-directory))
+
+;; Keep Custom (incl. `package-selected-packages') out of the versioned init.el
+(setq custom-file (locate-user-emacs-file "custom.el"))
+
 (require 'config)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages nil)
- '(truncate-lines t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(magit-diff-added ((t (:background "#007700" :foreground "#FFFFFF"))))
- '(magit-diff-added-highlight ((t (:background "#007700" :foreground "#FFFFFF"))))
- '(magit-diff-removed ((t (:background "#770000" :foreground "#FFFFFF"))))
- '(magit-diff-removed-highlight ((t (:background "#770000" :foreground "#FFFFFF")))))
+
+(when (file-exists-p custom-file)
+  (load custom-file nil 'nomessage))
+
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
 (put 'set-goal-column 'disabled nil)
+
+;;; init.el ends here

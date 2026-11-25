@@ -1,14 +1,7 @@
-(use-package
-  yaml-mode
+;; -*- lexical-binding: t -*-
+;; The package registers .yaml and .yml itself
 
-  :ensure t
-
-  :defer t
-
-  :mode
-  (("\\.yaml\\'" . yaml-mode))
-
-  ;; Add more
-  )
+(use-package yaml-mode
+  :defer t)
 
 (provide 'setup__yaml-mode)

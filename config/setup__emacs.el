@@ -1,10 +1,5 @@
-;; General settings for emacs
-(menu-bar-mode -1)
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
+;; -*- lexical-binding: t -*-
+;; General settings for emacs (menu/tool/scroll bars: early-init.el)
 
 (blink-cursor-mode 0)
 (setq ring-bell-function 'ignore)
@@ -14,7 +9,11 @@
 
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#555555")
-(set-face-foreground 'highlight nil)
+(set-face-foreground 'highlight 'unspecified)
+(set-face-attribute 'region nil :background "#777")
+
+(setq show-paren-delay 0)
+(set-face-attribute 'show-paren-match nil :background "#FF0000")
 
 ;; Scroll with n Lines lookahead
 (let ((n 5))
@@ -31,7 +30,7 @@
                                            1 font-lock-warning-face t)))))
 
 ;; Changes all yes/no questions to y/n type
-(fset 'yes-or-no-p 'y-or-n-p)
+(setq use-short-answers t)
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
@@ -41,16 +40,15 @@
 (global-set-key (kbd "C-c jt") 'beginning-of-buffer)
 (global-set-key (kbd "C-c jb") 'end-of-buffer)
 
-;; Globally activate eldoc-mode
-(global-eldoc-mode)
-
 ;; Do not create lock files. They just clutter the disk
 (setq create-lockfiles nil
       auto-save-default nil
       make-backup-files nil)
 
 (setq-default truncate-lines t)
-(custom-set-variables '(truncate-lines t))
+
+;; Bigger process read buffer, mainly for lsp-mode
+(setq read-process-output-max (* 1024 1024))
 
 (setq initial-major-mode 'emacs-lisp-mode)
 

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;; Shows a list of all commands completing the currently pending command you're typing
 
 (use-package

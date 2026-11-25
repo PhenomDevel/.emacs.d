@@ -1,18 +1,13 @@
-;; Wird benötigt, weil in Emacs26 Variablen entfernt worden sind,
-;; welche mit diesem Package wiederhergestelt werden bzw. Aliase erstellt werden auf die neuen Variablen
-(require 'flymake-proc)
+;; -*- lexical-binding: t -*-
+;; scss-mode is part of the built-in css-mode.el
 
-(use-package
-  scss-mode
-
-  :ensure t
+(use-package css-mode
+  :ensure nil
 
   :mode
   ("\\.scss\\'" . scss-mode)
 
-  :config
-  (setq scss-compile-at-save nil
-	css-indent-offset 2))
-
+  :custom
+  (css-indent-offset 2))
 
 (provide 'setup__scss-mode)

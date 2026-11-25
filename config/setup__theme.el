@@ -1,12 +1,8 @@
+;; -*- lexical-binding: t -*-
 ;; Setup zenburn theme
 
-(use-package
-  zenburn-theme
-
-  :ensure t
-
+(use-package zenburn-theme
   :config
-  (setq custom-safe-themes t) ; Always trust custom themes to prevent warning
-  (load-theme 'zenburn))
+  (load-theme 'zenburn t))
 
 (provide 'setup__theme)
