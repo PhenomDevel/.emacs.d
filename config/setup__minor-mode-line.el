@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;; Custom minor mode line settings initially from: http://amitp.blogspot.de/2011/08/emacs-custom-mode-line.html
 ;; slightly modified!
 
@@ -105,42 +106,34 @@
                     :box '(:line-width 1 :color "gray20" :style nil))
 
 (set-face-attribute 'mode-line-read-only-face nil
-                    :inherit 'mode-line-face
                     :foreground "#4271ae"
                     :box '(:line-width 2 :color "#4271ae"))
 
 (set-face-attribute 'mode-line-modified-face nil
-                    :inherit 'mode-line-face
                     :foreground "#d10700"
                     :background "#ffffff"
                     :box '(:line-width 1 :color "#d10700"))
 
 (set-face-attribute 'mode-line-folder-face nil
-                    :inherit 'mode-line-face
                     :foreground "gray50")
 
 (set-face-attribute 'mode-line-filename-face nil
-                    :inherit 'mode-line-face
                     :foreground "#3ce000"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-filename-modified-face nil
-                    :inherit 'mode-line-face
                     :foreground "#f5da42"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-filename-read-only-face nil
-                    :inherit 'mode-line-face
                     :foreground "#d10700"
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-position-face nil
-                    :inherit 'mode-line-face
                     :family "Arial" :height 100
                     :weight 'bold)
 
 (set-face-attribute 'mode-line-mode-face nil
-                    :inherit 'mode-line-face
                     :foreground "gray100")
 
 (set-face-attribute 'mode-line-minor-mode-face nil
@@ -149,7 +142,6 @@
                     :height 100)
 
 (set-face-attribute 'mode-line-process-face nil
-                    :inherit 'mode-line-face
                     :foreground "#3ce000")
 
 (set-face-attribute 'mode-line-80col-face nil
@@ -159,17 +151,14 @@
 		    )
 
 (set-face-attribute 'mode-line-error-face nil
-		    :inherit 'mode-line-face
                     :foreground "white"
 		    :background "#d10700")
 
 (set-face-attribute 'mode-line-warning-face nil
-		    :inherit 'mode-line-face
                     :foreground "black"
 		    :background "#f5da42")
 
 (set-face-attribute 'mode-line-info-face nil
-		    :inherit 'mode-line-face
 		    :foreground "black"
 		    :background "#3ce000")
 

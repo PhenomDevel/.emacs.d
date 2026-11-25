@@ -1,12 +1,15 @@
-(use-package lsp-mode
-  :ensure
-  t
+;; -*- lexical-binding: t -*-
 
+(defun my/lsp-maybe ()
+  "Start lsp for file buffers, except Emacs Lisp."
+  (when (and buffer-file-name
+             (not (derived-mode-p 'lisp-data-mode)))
+    (lsp-deferred)))
+
+(use-package lsp-mode
   :hook
-  (lsp-mode . lsp-diagnostics-mode)
   (lsp-mode . lsp-enable-which-key-integration)
-  (lsp-mode . lsp-completion-mode)
-  (prog-mode . lsp-deferred)
+  (prog-mode . my/lsp-maybe)
 
   :custom
   (lsp-keymap-prefix "C-c l")
@@ -23,9 +26,12 @@
   (lsp-enable-file-watchers nil)
   (lsp-enable-folding nil)
   (lsp-enable-imenu t)
-  (lsp-enable-on-type-formatting t)
+  ;; Indentation stays with the major modes (`define-clojure-indent', paredit)
+  (lsp-enable-indentation nil)
+  (lsp-enable-on-type-formatting nil)
   (lsp-enable-suggest-server-download t)
-  (lsp-enable-symbol-highlighting t)
+  ;; highlight-symbol does this
+  (lsp-enable-symbol-highlighting nil)
   (lsp-enable-text-document-color nil)
 
   (lsp-completion-enable t)
@@ -45,9 +51,6 @@
   (lsp-warn-no-matched-clients nil))
 
 (use-package lsp-ui
-  :ensure
-  t
-
   :after
   lsp-mode
 
@@ -65,9 +68,12 @@
   (lsp-ui-doc-use-childframe t)
   (lsp-ui-doc-position 'at-point))
 
+;; flycheck handles lsp and Clojure buffers; flymake only for Emacs Lisp
 (use-package flymake
+  :ensure nil
+
   :hook
-  ((prog-mode text-mode) . flymake-mode)
+  (emacs-lisp-mode . flymake-mode)
 
   :custom
   (flymake-show-diagnostics-at-end-of-line 'short)
