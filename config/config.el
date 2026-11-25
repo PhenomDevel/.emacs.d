@@ -30,6 +30,7 @@
 ;; Basics
 
 (require 'use-package)
+(require 'setup__platform)
 (require 'setup__use-package)
 (require 'setup__swiper)
 (require 'setup__crm-custom)
@@ -54,9 +55,8 @@
 (require 'setup__projectile)
 (require 'setup__yasnippet)
 
-(unless (eq system-type 'windows-nt)
-  (require 'setup__magit)
-  (require 'setup__magit-popup))
+(require 'setup__magit)
+(require 'setup__magit-popup)
 
 (require 'setup__smerge)
 ;; (require 'setup__linum)
