@@ -28,4 +28,12 @@ url/*
 elpa_backup
 .DS_Store
 .lsp-session-v1
-/.agent-shell/
+
+# Per-machine state and caches
+/custom.el
+/eln-cache/
+/tree-sitter/
+/org-persist/
+/tramp
+/history
+/bookmarks
