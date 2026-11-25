@@ -9,7 +9,7 @@
   (projectile-global-mode t)
 
   :config
-  (setq projectile-completion-system 'ido)
+  (setq projectile-completion-system 'default)
   (setq projectile-require-project-root nil)
   (setq projectile-mode-line-lighter "P")
   (setq projectile-indexing-method 'alien)
