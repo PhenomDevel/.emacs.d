@@ -29,6 +29,7 @@ Persönliche Emacs-Konfiguration, Schwerpunkt Clojure/ClojureScript (CIDER, cloj
 
 - Git for Windows im PATH (magit ist auch unter Windows aktiv).
 - projectile indiziert dort mit `hybrid` (kein GNU `find` nötig).
+- Paketsignaturen: Mit [Gpg4win](https://gpg4win.org) werden sie geprüft. Liegt nur das `gpg` aus Git for Windows im PATH, ist die Prüfung aus – dieses `gpg` versteht keine Windows-Pfade und ließe jede Installation aus GNU/NonGNU ELPA scheitern.
 
 ## CI
 
