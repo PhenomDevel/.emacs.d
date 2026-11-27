@@ -5,7 +5,9 @@
 (setq ring-bell-function 'ignore)
 
 (set-language-environment "UTF-8")
-(set-default-coding-systems 'utf-8)
+;; Not `set-default-coding-systems': it also forces process I/O to UTF-8,
+;; garbling output of Windows programs using cp850/cp1252
+(prefer-coding-system 'utf-8)
 
 (global-hl-line-mode 1)
 (set-face-background 'hl-line "#555555")
@@ -52,10 +54,23 @@
 
 (setq initial-major-mode 'emacs-lisp-mode)
 
-(set-face-attribute 'default nil
-		    :family "Cascadia Mono"
-		    :height 110
-		    :weight 'normal
-		    :width 'normal)
+;; First installed font wins (Cascadia Mono is missing on macOS by default)
+(defvar my/font-candidates
+  '("Cascadia Mono" "SF Mono" "Menlo" "Consolas" "DejaVu Sans Mono"))
+
+(defun my/apply-font (&optional frame)
+  (with-selected-frame (or frame (selected-frame))
+    (when (display-graphic-p)
+      (when-let* ((family (seq-find (lambda (f) (find-font (font-spec :family f)))
+                                    my/font-candidates)))
+        (set-face-attribute 'default nil
+                            :family family
+                            :height 110
+                            :weight 'normal
+                            :width 'normal)))))
+
+(my/apply-font)
+;; Daemon: fonts can only be resolved once a graphical frame exists
+(add-hook 'server-after-make-frame-hook #'my/apply-font)
 
 (provide 'setup__emacs)

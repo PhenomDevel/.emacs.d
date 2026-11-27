@@ -12,6 +12,7 @@
 ;; Basics
 
 (require 'use-package)
+(require 'setup__platform)
 (require 'setup__use-package)
 (require 'setup__completion)
 (require 'setup__multiple-cursors)
@@ -30,8 +31,7 @@
 (require 'setup__projectile)
 (require 'setup__yasnippet)
 
-(unless (eq system-type 'windows-nt)
-  (require 'setup__magit))
+(require 'setup__magit)
 
 (require 'setup__smerge)
 ;;

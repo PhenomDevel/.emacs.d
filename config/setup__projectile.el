@@ -13,7 +13,8 @@
   (setq projectile-completion-system 'default)
   (setq projectile-require-project-root nil)
   (setq projectile-mode-line-lighter "P")
-  (setq projectile-indexing-method 'alien)
+  ;; 'alien needs GNU find/tr, which Windows lacks
+  (setq projectile-indexing-method (if (eq system-type 'windows-nt) 'hybrid 'alien))
   (setq projectile-enable-caching nil)
 
   ;; TODO: Keybindings
