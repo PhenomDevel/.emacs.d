@@ -42,10 +42,29 @@
 (global-set-key (kbd "C-c jt") 'beginning-of-buffer)
 (global-set-key (kbd "C-c jb") 'end-of-buffer)
 
-;; Do not create lock files. They just clutter the disk
-(setq create-lockfiles nil
-      auto-save-default nil
-      make-backup-files nil)
+;; No lock files; auto-saves and backups go to ~/.emacs.d instead of next to the file
+(let ((auto-save-dir (locate-user-emacs-file "auto-save/"))
+      (backup-dir (locate-user-emacs-file "backups/")))
+  (make-directory auto-save-dir t)
+  (setq create-lockfiles nil
+        auto-save-default t
+        auto-save-file-name-transforms `((".*" ,auto-save-dir t))
+        make-backup-files t
+        backup-directory-alist `(("." . ,backup-dir))
+        backup-by-copying t
+        version-control t
+        delete-old-versions t
+        kept-new-versions 5
+        kept-old-versions 2))
+
+;; Reload buffers changed on disk (branch switches, formatters)
+(setq auto-revert-verbose nil)
+(global-auto-revert-mode 1)
+
+;; Recent files for `consult-buffer', cursor position per file
+(setq recentf-max-saved-items 200)
+(recentf-mode 1)
+(save-place-mode 1)
 
 (setq-default truncate-lines t)
 

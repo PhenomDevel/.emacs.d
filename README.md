@@ -42,6 +42,13 @@ Persönliche Emacs-Konfiguration, Schwerpunkt Clojure/ClojureScript (CIDER, cloj
 
 Lokaler Zustand (`custom.el`, `elpa/`, `eln-cache/`, `tree-sitter/`, Historie, Caches) ist per `.gitignore` ausgeschlossen. Customize schreibt nach `custom.el`, nicht in `init.el`.
 
+## Dateien und Speichern
+
+- Auto-Save und Backups (5 Versionen) landen zentral in `~/.emacs.d/auto-save/` bzw. `~/.emacs.d/backups/`, nicht neben den Dateien; Lock-Dateien sind aus.
+- Extern geänderte Dateien (Branch-Wechsel, Formatter) werden automatisch neu geladen, solange der Buffer nicht verändert ist.
+- `C-x b` zeigt auch zuletzt geöffnete Dateien (recentf); die Cursor-Position pro Datei bleibt erhalten.
+- Leerzeichen am Zeilenende werden nur in geänderten Zeilen entfernt (ws-butler; nicht in Markdown). `.editorconfig` in Projekten wird beachtet.
+
 ## Wichtige Tastenbelegungen
 
 | Taste | Befehl |

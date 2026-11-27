@@ -21,7 +21,7 @@
 (require 'setup__rainbow-mode)
 (require 'setup__company)
 (require 'setup__org-mode)
-(require 'setup__simple)
+(require 'setup__formatting)
 ;; (require 'setup__treemacs)
 ;;
 ;;
