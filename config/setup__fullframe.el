@@ -1,19 +1,12 @@
+;; -*- lexical-binding: t -*-
 ;; Forces some commands to automatically run in a single fullscreen frame
 
-(use-package
-  fullframe
-
-  :ensure t
-
-  :commands
-  (magit-status)
+;; Loaded eagerly: deferring on `magit-status' never triggers, since magit
+;; already autoloads it. The advice also applies to the autoload stub.
+(use-package fullframe
+  :demand t
 
   :config
-  (eval-after-load 'fullframe
-    (fullframe magit-status magit-mode-quit-window))
-
-  ;; Add more
-
-  )
+  (fullframe magit-status magit-mode-quit-window))
 
 (provide 'setup__fullframe)

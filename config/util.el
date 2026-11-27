@@ -1,5 +1,6 @@
-(require 'cl)
-(require 'dash)
+;; -*- lexical-binding: t -*-
+
+(require 'cl-lib)
 (require 'package)
 
 
@@ -11,11 +12,11 @@
   (save-some-buffers t))
 
 (defun util/all-buffers-saved (f)
-  (lexical-let ((g f))
-    (lambda ()
-      (interactive)
-      (util/save-all-buffers!)
-      (funcall g))))
+  "Return a command that saves all buffers, then calls F."
+  (lambda ()
+    (interactive)
+    (util/save-all-buffers!)
+    (funcall f)))
 
 (defun util/switch-to-previous-buffer ()
   (interactive)
@@ -24,23 +25,23 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Windows
-(defun global-text-scale-adjust (inc) (interactive)
-       (text-scale-set 1)
-       (kill-local-variable 'text-scale-mode-amount)
-       (setq-default text-scale-mode-amount (+ text-scale-mode-amount inc)))
 
-(defun toggle-maximize-buffer (zoom) "Maximize buffer"
-       (interactive)
-       (if (= 1 (length (window-list)))
-           (progn
-             (text-scale-adjust 0)
-             (jump-to-register '_))
-         (progn
-           (window-configuration-to-register '_)
-           (delete-other-windows)
-           (global-text-scale-adjust (+ text-scale-mode-amount zoom)))))
+(defun util/toggle-maximize-buffer (&optional zoom)
+  "Toggle between the selected window alone and the previous layout.
+With prefix arg ZOOM, increase the text scale by ZOOM steps."
+  (interactive (list (if current-prefix-arg
+                         (prefix-numeric-value current-prefix-arg)
+                       0)))
+  (if (= 1 (length (window-list)))
+      (progn
+        (text-scale-set 0)
+        (jump-to-register ?_))
+    (window-configuration-to-register ?_)
+    (delete-other-windows)
+    (when (and zoom (/= zoom 0))
+      (text-scale-increase zoom))))
 
-(setq util/window-toggle-direction 1)
+(defvar util/window-toggle-direction 1)
 
 (defun util/window-toggle ()
   (interactive)
@@ -70,8 +71,6 @@
     (delete-window buffer-window)))
 
 
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Comments
 
@@ -87,36 +86,23 @@
 ;; Keys
 
 (defun util/define-keys (ms &rest xs)
-  (let ((ms* (if (keymapp ms)
-                 (list ms)
-               ms)))
-
-    (-each (-partition 2 xs)
-      (lambda (x)
-        (let ((k (car x))
-              (f (cadr x)))
-          (-each ms*
-            (lambda (m)
-              (define-key m (kbd k) f))))))))
+  "Bind key/command pairs XS in keymap or list of keymaps MS."
+  (let ((maps (if (keymapp ms) (list ms) ms)))
+    (cl-loop for (k f) on xs by #'cddr
+             do (dolist (m maps)
+                  (define-key m (kbd k) f)))))
 
 (defun util/global-set-keys (&rest xs)
-  (-each (-partition 2 xs)
-    (lambda (x)
-      (let ((k (car x))
-            (f (cadr x)))
-        (global-set-key (kbd k) f)))))
+  (cl-loop for (k f) on xs by #'cddr
+           do (global-set-key (kbd k) f)))
 
 (defun util/global-unset-keys (&rest ks)
-  (-each ks
-    (lambda (k)
-      (global-unset-key (kbd k)))))
+  (dolist (k ks)
+    (global-unset-key (kbd k))))
 
 (defun util/local-set-keys (&rest xs)
-  (-each (-partition 2 xs)
-    (lambda (x)
-      (let ((k (car x))
-            (f (cadr x)))
-        (local-set-key (kbd k) f)))))
+  (cl-loop for (k f) on xs by #'cddr
+           do (local-set-key (kbd k) f)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -124,7 +110,8 @@
 
 (defun util--package/install-package! (pkg)
   (unless (package-installed-p pkg)
-    (package-refresh-contents)
+    (unless package-archive-contents
+      (package-refresh-contents))
     (package-install pkg)))
 
 (defun util--package/install-packages! (pkgs)
@@ -140,10 +127,9 @@
   (join-line -1))
 
 (defun util/open-file (file)
-  (lexical-let ((file file))
-    (lambda ()
-      (interactive)
-      (find-file file))))
+  (lambda ()
+    (interactive)
+    (find-file file)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -2,7 +2,6 @@
 
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (setq package-enable-at-startup nil)
 
@@ -49,8 +48,7 @@
 (require 'setup__yasnippet)
 
 (unless (eq system-type 'windows-nt)
-  (require 'setup__magit)
-  (require 'setup__magit-popup))
+  (require 'setup__magit))
 
 (require 'setup__smerge)
 ;; (require 'setup__linum)
@@ -83,8 +81,8 @@
 ;;;; =============================================================================
 ;;;; Appeareance
 ;;
-(require 'setup__emacs)
 (require 'setup__theme)
+(require 'setup__emacs)
 (require 'setup__minor-mode-line)
 
 
