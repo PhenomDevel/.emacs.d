@@ -40,6 +40,20 @@
         w32-pipe-buffer-size (* 64 1024))
 
   ;; Avoids stutter with fonts that have many glyphs
-  (setq inhibit-compacting-font-caches t))
+  (setq inhibit-compacting-font-caches t)
+
+  ;; Git for Windows' MSYS gpg treats Windows paths (c:/...) as relative, so
+  ;; every signed archive (GNU/NonGNU ELPA) fails with bad-signature. Prefer
+  ;; Gpg4win; with only the MSYS gpg, skip verification as on a machine
+  ;; without gpg.
+  (require 'seq)
+  (let ((native (seq-find #'file-executable-p
+                          '("C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+                            "C:/Program Files/GnuPG/bin/gpg.exe")))
+        (found (executable-find "gpg")))
+    (cond (native
+           (setq epg-gpg-program native))
+          ((and found (string-match-p "/usr/bin/gpg\\(?:\\.exe\\)?\\'" found))
+           (setq package-check-signature nil)))))
 
 (provide 'setup__platform)
