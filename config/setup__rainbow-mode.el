@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;; Show the colors for colorcodes / colornames directly within the buffer
 
 (use-package

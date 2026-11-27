@@ -1,27 +1,9 @@
+;; -*- lexical-binding: t -*-
+;; Packages are activated before init.el (`package-enable-at-startup');
+;; use-package :ensure installs missing ones and refreshes archives on demand.
 (require 'package)
-
-
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-(setq package-enable-at-startup nil)
-
-(package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;; NOTE: Packages which should always be loaded
-(defvar default-packages
-  '(use-package
-     diminish
-
-     ))
-
-(dolist (p default-packages)
-  (unless (package-installed-p p)
-    (package-refresh-contents)
-    (package-install p)))
 
 
 ;; =============================================================================
@@ -32,16 +14,10 @@
 (require 'use-package)
 (require 'setup__platform)
 (require 'setup__use-package)
-(require 'setup__swiper)
-(require 'setup__crm-custom)
-(require 'setup__ido-completing-read+)
-(require 'setup__ido-vertical-mode)
-(require 'setup__ido)
+(require 'setup__completion)
 (require 'setup__multiple-cursors)
-(require 'setup__counsel)
-(require 'setup__smex)
 (require 'setup__fullframe)
-;; (require 'setup__which-key)
+(require 'setup__which-key)
 (require 'setup__rainbow-mode)
 (require 'setup__company)
 (require 'setup__org-mode)
@@ -56,10 +32,8 @@
 (require 'setup__yasnippet)
 
 (require 'setup__magit)
-(require 'setup__magit-popup)
 
 (require 'setup__smerge)
-;; (require 'setup__linum)
 ;;
 ;;
 ;;;; =============================================================================
@@ -89,14 +63,9 @@
 ;;;; =============================================================================
 ;;;; Appeareance
 ;;
-(require 'setup__emacs)
 (require 'setup__theme)
+(require 'setup__emacs)
 (require 'setup__minor-mode-line)
-
-;; =============================================================================
-;; AI
-
-(require 'setup__agent-shell)
 
 
 ;;

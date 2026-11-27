@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;; Easy project management and file management
 
 (use-package
@@ -6,10 +7,10 @@
   :ensure t
 
   :init
-  (projectile-global-mode t)
+  (projectile-mode 1)
 
   :config
-  (setq projectile-completion-system 'ido)
+  (setq projectile-completion-system 'default)
   (setq projectile-require-project-root nil)
   (setq projectile-mode-line-lighter "P")
   ;; 'alien needs GNU find/tr, which Windows lacks
