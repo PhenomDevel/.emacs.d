@@ -12,13 +12,28 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest]
-        emacs: ['29.4', '30.2']
+        emacs: ['29.4', '30.2', '31.1']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: jcs090218/setup-emacs@master
+      - name: Install Emacs (Linux/macOS)
+        if: runner.os != 'Windows'
+        uses: purcell/setup-emacs@master
         with:
           version: ${{ matrix.emacs }}
+
+      # Official GNU build; jcs090218/setup-emacs-windows 404s on 31.1
+      - name: Install Emacs (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $v = '${{ matrix.emacs }}'
+          $major = $v.Split('.')[0]
+          Invoke-WebRequest "https://ftp.gnu.org/gnu/emacs/windows/emacs-$major/emacs-$v.zip" -OutFile "$env:RUNNER_TEMP\emacs.zip"
+          Expand-Archive "$env:RUNNER_TEMP\emacs.zip" -DestinationPath C:\emacs
+          $bin = (Get-ChildItem C:\emacs -Recurse -Filter emacs.exe | Select-Object -First 1).DirectoryName
+          Add-Content $env:GITHUB_PATH $bin
+          & "$bin\emacs.exe" --version | Select-Object -First 1
 
       - name: First start (installs packages)
         shell: bash
@@ -33,9 +48,3 @@ jobs:
             exit 1
           fi
 
-  gnu-windows-builds:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          curl -s https://ftp.gnu.org/gnu/emacs/windows/ | grep -o 'emacs-[0-9][0-9]/' | sort -u
-          for d in emacs-30 emacs-31; do echo "== $d"; curl -s https://ftp.gnu.org/gnu/emacs/windows/$d/ | grep -oE 'emacs-[0-9.]+[^"<>]*[.](zip|exe)' | sort -u; done
