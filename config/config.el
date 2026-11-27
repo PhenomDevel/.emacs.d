@@ -93,11 +93,6 @@
 (require 'setup__theme)
 (require 'setup__minor-mode-line)
 
-;; =============================================================================
-;; AI
-
-(require 'setup__agent-shell)
-
 
 ;;
 (provide 'config)
