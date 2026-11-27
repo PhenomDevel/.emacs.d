@@ -1,15 +1,10 @@
-(use-package
-  smerge-mode
+;; -*- lexical-binding: t -*-
 
-  :ensure
-  t
-
-  :config
-  (setq
-   )
+(use-package smerge-mode
+  :ensure nil
 
   :bind
-  (("C-c ko" . smerge-keep-other)
-   ("C-c km" . smerge-keep-mine)))
+  (("C-c ko" . smerge-keep-lower)
+   ("C-c km" . smerge-keep-upper)))
 
 (provide 'setup__smerge)

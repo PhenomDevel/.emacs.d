@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 ;; Easy project management and file management
 
 (use-package
@@ -6,7 +7,7 @@
   :ensure t
 
   :init
-  (projectile-global-mode t)
+  (projectile-mode 1)
 
   :config
   (setq projectile-completion-system 'default)
