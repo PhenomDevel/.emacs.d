@@ -76,7 +76,7 @@ Lokaler Zustand (`custom.el`, `elpa/`, `eln-cache/`, `tree-sitter/`, Historie, C
 | `C-c km` / `C-c ko` | smerge: oberen / unteren Stand übernehmen |
 | `C-c ! n` `p` `l` | flycheck: nächster / vorheriger Fehler / Liste |
 | `C-c l` | lsp-Präfix |
-| `C-c h`, `C-c C-h n`/`p` | highlight-symbol |
+| `C-c h`, `M-n`/`M-p` | symbol-overlay: Symbol markieren, zum nächsten/vorherigen Vorkommen |
 | `M-e` | expand-region |
 | `M-1` / `M-2` / `M-3` | multiple-cursors: nächstes / überspringen / alle |
 | `C-c cc` / `C-c ji` / `C-c q` | CIDER connect / jack-in / quit |
