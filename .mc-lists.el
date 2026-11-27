@@ -6,7 +6,6 @@
 	cider-load-buffer
 	end-of-buffer
 	haml-electric-backspace
-	ido-find-file
 	indent-for-tab-command
 	kill-sentence
 	org-delete-char
@@ -24,7 +23,6 @@
 	paredit-open-square
 	paredit-raise-sexp
 	paredit-semicolon
-	swiper
 	xterm-paste
 	yaml-electric-backspace
 	yaml-electric-dash-and-dot

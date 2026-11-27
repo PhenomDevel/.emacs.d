@@ -40,7 +40,7 @@
 ;;;; Programming
 ;;
 (require 'setup__flycheck)
-(require 'setup__highlight-symbol)
+(require 'setup__symbol-overlay)
 (require 'setup__rainbow-delimiters)
 (require 'setup__cider)
 (require 'setup__paxedit)
