@@ -1,5 +1,7 @@
 # .emacs.d
 
+[![CI](https://github.com/PhenomDevel/.emacs.d/actions/workflows/ci.yml/badge.svg)](https://github.com/PhenomDevel/.emacs.d/actions/workflows/ci.yml)
+
 Persönliche Emacs-Konfiguration, Schwerpunkt Clojure/ClojureScript (CIDER, clojure-lsp), dazu TypeScript, Lua, SCSS/Sass, YAML, Markdown, Groovy.
 
 ## Voraussetzungen
@@ -29,6 +31,14 @@ Persönliche Emacs-Konfiguration, Schwerpunkt Clojure/ClojureScript (CIDER, cloj
 - projectile indiziert dort mit `hybrid` (kein GNU `find` nötig).
 - Paketsignaturen: Mit [Gpg4win](https://gpg4win.org) werden sie geprüft. Liegt nur das `gpg` aus Git for Windows im PATH, ist die Prüfung aus – dieses `gpg` versteht keine Windows-Pfade und ließe jede Installation aus GNU/NonGNU ELPA scheitern.
 
+## CI
+
+`.github/workflows/ci.yml` startet die Konfiguration bei jedem Push/PR und wöchentlich auf Linux, macOS und Windows mit Emacs 29.4, 30.2 und 31.1: einmal mit frischer Paketinstallation, dann ein zweites Mal, das ohne Warnungen und Fehler durchlaufen muss. Lokal genauso:
+
+```sh
+emacs --batch --init-directory="$PWD" -l test/check-startup.el
+```
+
 ## Aufbau
 
 | Datei | Inhalt |
@@ -40,6 +50,7 @@ Persönliche Emacs-Konfiguration, Schwerpunkt Clojure/ClojureScript (CIDER, cloj
 | `config/setup__*.el` | Ein Modul pro Paket bzw. Thema |
 | `config/util.el` | Hilfsfunktionen |
 | `config/snippets/` | yasnippet-Snippets |
+| `test/check-startup.el` | Startprüfung für die CI |
 
 Lokaler Zustand (`custom.el`, `elpa/`, `eln-cache/`, `tree-sitter/`, Historie, Caches) ist per `.gitignore` ausgeschlossen. Customize schreibt nach `custom.el`, nicht in `init.el`.
 
