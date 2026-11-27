@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    - cron: '17 5 * * 1' # weekly: catch breaking package updates on MELPA/ELPA
+  workflow_dispatch:
+
+jobs:
+  startup:
+    name: ${{ matrix.os }} / Emacs ${{ matrix.emacs }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        emacs: ['29.4', '30.2', '31.1']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jcs090218/setup-emacs@master
+        with:
+          version: ${{ matrix.emacs }}
+
+      - name: First start (installs packages)
+        shell: bash
+        run: emacs --batch --init-directory="$GITHUB_WORKSPACE" -l test/check-startup.el
+
+      - name: Second start (must be free of warnings and errors)
+        shell: bash
+        run: |
+          emacs --batch --init-directory="$GITHUB_WORKSPACE" -l test/check-startup.el 2>&1 | tee startup.log
+          if grep -E '(Warning|Error) \(|Cannot load|^Error' startup.log; then
+            echo "::error::warnings or errors during startup"
+            exit 1
+          fi
