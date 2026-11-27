@@ -19,7 +19,7 @@
 (require 'setup__fullframe)
 (require 'setup__which-key)
 (require 'setup__rainbow-mode)
-(require 'setup__company)
+(require 'setup__corfu)
 (require 'setup__org-mode)
 (require 'setup__simple)
 ;; (require 'setup__treemacs)

@@ -50,6 +50,7 @@ Lokaler Zustand (`custom.el`, `elpa/`, `eln-cache/`, `tree-sitter/`, Historie, C
 | `C-s` | `consult-line` |
 | `C-x b` | `consult-buffer` |
 | `M-g i` | `consult-imenu` |
+| Popup im Code | corfu: erscheint automatisch; `C-n`/`C-p` bzw. Pfeiltasten wählen, `TAB`/`RET` übernehmen, `C-g` schließen |
 | `C-c gg` / `C-c gs` | `consult-git-grep` / mit markiertem Text |
 | `C-c p` | projectile-Präfix |
 | `C-c ms` `ml` `mb` `mp` `mP` | magit status / log / blame / push / pull |
@@ -66,4 +67,4 @@ Lokaler Zustand (`custom.el`, `elpa/`, `eln-cache/`, `tree-sitter/`, Historie, C
 
 ## Nach Updates
 
-Nicht mehr verwendete Pakete einmalig entfernen (`M-x package-delete`): `ido-completing-read+`, `ido-vertical-mode`, `crm-custom`, `smex`, `counsel`, `swiper`, `magit-popup`, `scss-mode`, `tide`, `emojify`, `company-quickhelp`, `clojure-mode-extra-font-locking`. Insbesondere `scss-mode` überdeckt sonst das eingebaute `scss-mode`.
+Nicht mehr verwendete Pakete einmalig entfernen (`M-x package-delete`): `ido-completing-read+`, `ido-vertical-mode`, `crm-custom`, `smex`, `counsel`, `swiper`, `magit-popup`, `scss-mode`, `tide`, `emojify`, `company-quickhelp`, `clojure-mode-extra-font-locking`, `company`. Insbesondere `scss-mode` überdeckt sonst das eingebaute `scss-mode`.

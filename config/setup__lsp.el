@@ -13,7 +13,8 @@
 
   :custom
   (lsp-keymap-prefix "C-c l")
-  (lsp-completion-provider :capf)
+  ;; :none: lsp would otherwise switch on company-mode if it is still installed
+  (lsp-completion-provider :none)
   (lsp-log-io nil)
   (lsp-keep-workspace-alive nil)
   (lsp-idle-delay 0.5)
